@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="T0Y9UZ_Kosik_Otto_Feleves.View.ForecastPage"
+             Title="Forecast">
+    <ScrollView>
+        <VerticalStackLayout
+            BackgroundColor="{Binding BackgroundColor}"
+            Padding="50"
+            Spacing="30">   
+            <Border
+                x:Name="ForecastForFiveDaysContainer"
+                IsVisible="False"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Padding="10"
+                BackgroundColor="Coral">
+                <VerticalStackLayout>
+                    <Label 
+                        Text="5 day weather forecast" 
+                        FontSize="30" 
+                        HorizontalTextAlignment="Center"
+                        TextColor="{Binding TextColor}">
+                    </Label>
+
+                    <FlexLayout 
+                        Padding="30" 
+                        x:Name="ForecastForFiveDays" 
+                        HorizontalOptions="Center" 
+                        Wrap="Wrap" 
+                        JustifyContent="SpaceEvenly">
+                        <VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                    </FlexLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <FlexLayout
+                JustifyContent="SpaceAround">
+
+                <Button
+                    Text="Home"
+                    x:Name="MainPageButton"
+                    Clicked="OnMainPageClick"/>
+
+                <Button
+                    Text="Forecast"
+                    x:Name="ForecastPageButton"
+                    Clicked="OnForecastPageClick"/>
+
+                <Button
+                    Text="Settings"
+                    x:Name="SettingsPageButton"
+                    Clicked="OnSettingsPageClick"/>
+
+            </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

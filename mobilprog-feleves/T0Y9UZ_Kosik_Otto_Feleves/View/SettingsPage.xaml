@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves"
+             x:Class="T0Y9UZ_Kosik_Otto_Feleves.View.SettingsPage"
+             Title="Settings">
+    
+    <ScrollView
+        BackgroundColor="{Binding BackgroundColor}">
+        <VerticalStackLayout
+        Padding="50"
+        Spacing="30">
+            <Border
+                x:Name="SettingsContainer"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Padding="10"
+                BackgroundColor="Coral">
+                
+                <VerticalStackLayout
+                    Spacing="10">
+                    <FlexLayout
+                        HorizontalOptions="Fill"
+                        JustifyContent="SpaceAround">
+                        <Label
+                            Text="Dark/Light theme"
+                            x:Name="LightDarkThemeLable"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            FontSize="20"
+                            TextColor="{Binding TextColor}"/>
+
+                        <Button 
+                            x:Name="LightDarkThemeButton"
+                            Text="Theme"
+                            HorizontalOptions="Center"
+                            Command="{Binding ChangeThemeCommand}"
+                            BackgroundColor="{Binding BackgroundColor}"
+                            TextColor="{Binding TextColor}"
+                            />
+                    </FlexLayout>
+
+                    <FlexLayout
+                        HorizontalOptions="Fill"
+                        JustifyContent="SpaceAround">
+                        <Label
+                            Text="Set default location"
+                            x:Name="DefaultLocationLabel"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            FontSize="20"
+                            TextColor="{Binding TextColor}"/>
+                        
+                        <Entry
+                            Placeholder="Budapest"
+                            x:Name="DefaultLocationEntry"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            FontSize="20"/>
+                    </FlexLayout>
+
+                    <FlexLayout
+                        HorizontalOptions="Fill"
+                        JustifyContent="SpaceAround">
+                        <Label
+                            Text="Version: 1.0"
+                            x:Name="AppVersion"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            FontSize="20"
+                            TextColor="{Binding TextColor}"/>
+                    </FlexLayout>
+                </VerticalStackLayout>
+            </Border>
+            
+            <FlexLayout
+                JustifyContent="SpaceAround">
+
+                <Button
+                    Text="Home"
+                    x:Name="MainPageButton"
+                    Clicked="OnMainPageClick"/>
+
+                <Button
+                    Text="Forecast"
+                    x:Name="ForecastPageButton"
+                    IsEnabled="{Binding IsForecastButtonEnabled}"
+                    Clicked="OnForecastPageClick"/>
+
+                <Button
+                    Text="Settings"
+                    x:Name="SettingsPageButton"
+                    Clicked="OnSettingsPageClick"/>
+
+            </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

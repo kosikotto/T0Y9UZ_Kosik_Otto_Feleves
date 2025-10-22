@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>T0Y9UZ_Kosik_Otto_Feleves</name>
+    </assembly>
+    <members>
+        <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.GeoInfo">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.geoInfo"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.WeatherForecasts">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.weatherForecasts"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.BackgroundColor">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.backgroundColor"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.TextColor">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.textColor"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.IsDarkTheme">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.isDarkTheme"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.DetailsVisible">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.detailsVisible"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.TextOfDetailsButton">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.textOfDetailsButton"/>
+        </member>
+        <member name="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.toggleDetailsCommand">
+            <summary>The backing field for <see cref="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.ToggleDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.ToggleDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.ToggleDetails"/>.</summary>
+        </member>
+        <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.SearchInput">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.searchInput"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.GeoInfo">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.geoInfo"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.WeatherForecasts">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.weatherForecasts"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.IsWeatherVisible">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.isWeatherVisible"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.IsDetailsVisible">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.isDetailsVisible"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.IsForecastButtonEnabled">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.isForecastButtonEnabled"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.BackgroundColor">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.backgroundColor"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.TextColor">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.textColor"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.IsDarkTheme">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.isDarkTheme"/>
+        </member>
+        <member name="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.displayValuesCommand">
+            <summary>The backing field for <see cref="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.DisplayValuesCommand"/>.</summary>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.DisplayValuesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel.DisplayValues"/>.</summary>
+        </member>
+        <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.GeoInfo">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.geoInfo"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.WeatherForecasts">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.weatherForecasts"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.IsForecastButtonEnabled">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.isForecastButtonEnabled"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.BackgroundColor">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.backgroundColor"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.TextColor">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.textColor"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.IsDarkTheme">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.isDarkTheme"/>
+        </member>
+        <member name="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.changeThemeCommand">
+            <summary>The backing field for <see cref="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeThemeCommand"/>.</summary>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeThemeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeTheme"/>.</summary>
+        </member>
+        <member name="T:T0Y9UZ_Kosik_Otto_Feleves.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.GeoInfo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "GeoInfo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.WeatherForecasts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "WeatherForecasts" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.BackgroundColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "BackgroundColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TextColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TextColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsDarkTheme">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsDarkTheme" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DetailsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DetailsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TextOfDetailsButton">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TextOfDetailsButton" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchInput">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchInput" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsWeatherVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsWeatherVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsDetailsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsDetailsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsForecastButtonEnabled">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsForecastButtonEnabled" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.GeoInfo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "GeoInfo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.WeatherForecasts">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "WeatherForecasts" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.BackgroundColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "BackgroundColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TextColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TextColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDarkTheme">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDarkTheme" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DetailsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DetailsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TextOfDetailsButton">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TextOfDetailsButton" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchInput">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchInput" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsWeatherVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsWeatherVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDetailsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDetailsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsForecastButtonEnabled">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsForecastButtonEnabled" generated properties.</summary>
+        </member>
+    </members>
+</doc>
