@@ -11,7 +11,7 @@ public partial class ForecastPage : ContentPage
 {
     public GeoInfo GeoInfo { get; set; }
     public List<WeatherForecast> WeatherForecasts { get; set; }
-	public ForecastPage()
+    public ForecastPage()
 	{
 		InitializeComponent();
         BindingContext = new ForecastPageViewModel();
@@ -31,27 +31,35 @@ public partial class ForecastPage : ContentPage
     public void Generator()
     {
         ForecastForFiveDays.Children.Clear();
-        VerticalStackGenerate(WeatherForecasts[0], true);
+        VerticalStackGenerate(WeatherForecasts[0], true, 0);
 
         for (int i = 1; i < WeatherForecasts.Count; i++)
         {
-            VerticalStackGenerate(WeatherForecasts[i], false);
+            VerticalStackGenerate(WeatherForecasts[i], false, i);
         }
 
         ForecastForFiveDaysContainer.IsVisible = true;
     }
 
-    public void VerticalStackGenerate(WeatherForecast weatherForecasts, bool current)
+    public void VerticalStackGenerate(WeatherForecast weatherForecasts, bool current, int idx)
     {
-        var color = Brush.DarkGray;
+        var itemVm = new ForecastPageItemsViewModel();
         var vm = BindingContext as ForecastPageViewModel;
+        vm.ForecastItems.Add(itemVm);
 
-        if (current)
+        var color = current ? Brush.DarkGreen : Brush.DarkGray;
+
+        // FONTOS: az aktuális "kártya" binding contextje
+        var borderForStack = new Border
         {
-            color = Brush.DarkGreen;
-        }
+            Stroke = Brush.White,
+            StrokeThickness = 2,
+            Background = color,
+            StrokeShape = new RoundRectangle { CornerRadius = 10 },
+            BindingContext = itemVm // <-- EZ KELL IDE!!!
+        };
 
-        var dayLable = new Label
+        var dayLabel = new Label
         {
             Text = $"{DateOnly.Parse(weatherForecasts.Date.Split(" ")[0]).DayOfWeek}",
             HorizontalOptions = LayoutOptions.Center,
@@ -63,10 +71,9 @@ public partial class ForecastPage : ContentPage
         {
             Source = $"https://openweathermap.org/img/wn/{weatherForecasts.Icon}.png",
             WidthRequest = 50,
-            HeightRequest = 50,
+            HeightRequest = 50
         };
-
-        weatherIcon.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageViewModel.DetailsVisible)));
+        weatherIcon.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
 
         var weatherDescription = new Label
         {
@@ -74,8 +81,7 @@ public partial class ForecastPage : ContentPage
             HorizontalOptions = LayoutOptions.Center,
             TextColor = vm.TextColor
         };
-
-        weatherDescription.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageViewModel.DetailsVisible)));
+        weatherDescription.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
 
         var temp = new Label
         {
@@ -83,8 +89,7 @@ public partial class ForecastPage : ContentPage
             HorizontalOptions = LayoutOptions.Center,
             TextColor = vm.TextColor
         };
-
-        temp.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageViewModel.DetailsVisible)));
+        temp.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
 
         var humidity = new Label
         {
@@ -92,8 +97,7 @@ public partial class ForecastPage : ContentPage
             HorizontalOptions = LayoutOptions.Center,
             TextColor = vm.TextColor
         };
-
-        humidity.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageViewModel.DetailsVisible)));
+        humidity.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
 
         var wind = new Label
         {
@@ -101,39 +105,27 @@ public partial class ForecastPage : ContentPage
             HorizontalOptions = LayoutOptions.Center,
             TextColor = vm.TextColor
         };
-
-        wind.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageViewModel.DetailsVisible)));
-
-        var borderForStack = new Border
-        {
-            Stroke = Brush.White,
-            StrokeThickness = 2,
-            Background = color,
-
-            StrokeShape = new RoundRectangle
-            {
-                CornerRadius = 10
-            }
-        };
+        wind.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
 
         var button = new Button
         {
             HorizontalOptions = LayoutOptions.Center,
-            Command = vm.ToggleDetailsCommand,
             TextColor = vm.TextColor,
             BackgroundColor = vm.BackgroundColor
         };
-
-        button.SetBinding(Button.TextProperty, new Binding(nameof(ForecastPageViewModel.TextOfDetailsButton)));
+        button.SetBinding(Button.CommandProperty, new Binding(nameof(ForecastPageItemsViewModel.ToggleDetailsCommand)));
+        button.SetBinding(Button.TextProperty, new Binding(nameof(ForecastPageItemsViewModel.TextOfDetailsButton)));
 
         var verticalStack = new VerticalStackLayout
         {
-            Margin = 5,
+            Margin = 10,
             Spacing = 5,
-            HorizontalOptions = LayoutOptions.Center
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center,
+            WidthRequest = 200,
         };
 
-        verticalStack.Children.Add(dayLable);
+        verticalStack.Children.Add(dayLabel);
         verticalStack.Children.Add(weatherIcon);
         verticalStack.Children.Add(weatherDescription);
         verticalStack.Children.Add(temp);
@@ -142,9 +134,9 @@ public partial class ForecastPage : ContentPage
         verticalStack.Children.Add(button);
 
         borderForStack.Content = verticalStack;
-
         ForecastForFiveDays.Children.Add(borderForStack);
     }
+
 
     //Navigációs gombok
     private async void OnMainPageClick(object? sender, EventArgs e)

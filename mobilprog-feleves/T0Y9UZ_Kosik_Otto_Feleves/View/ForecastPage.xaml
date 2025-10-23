@@ -20,7 +20,8 @@
                         Text="5 day weather forecast" 
                         FontSize="30" 
                         HorizontalTextAlignment="Center"
-                        TextColor="{Binding TextColor}">
+                        TextColor="{Binding TextColor}"
+                        FontAttributes="Bold">
                     </Label>
 
                     <FlexLayout 
@@ -28,7 +29,9 @@
                         x:Name="ForecastForFiveDays" 
                         HorizontalOptions="Center" 
                         Wrap="Wrap" 
-                        JustifyContent="SpaceEvenly">
+                        JustifyContent="SpaceEvenly"
+                        AlignItems="Start"
+                        AlignContent="Start">
                         <VerticalStackLayout>
 
                         </VerticalStackLayout>

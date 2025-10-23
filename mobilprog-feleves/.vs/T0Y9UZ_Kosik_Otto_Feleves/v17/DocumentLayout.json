@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\view\\forecastpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\view\\forecastpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\view\\forecastpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\view\\forecastpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\viewmodel\\forecastpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\viewmodel\\forecastpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,50 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ForecastPageViewModel.cs",
-              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\ForecastPageViewModel.cs",
-              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\ForecastPageViewModel.cs",
-              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\ForecastPageViewModel.cs",
-              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\ForecastPageViewModel.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T19:57:25.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ForecastPage.xaml.cs",
-              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml.cs",
-              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml.cs",
-              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml.cs",
-              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml.cs",
-              "ViewState": "AgIAALUAAAAAAAAAAAAowOIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T10:12:11.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ForecastPage.xaml",
-              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml",
-              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml",
-              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml",
-              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\View\\ForecastPage.xaml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAswCkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-22T10:12:36.637Z",
-              "EditorCaption": ""
             }
           ]
         }

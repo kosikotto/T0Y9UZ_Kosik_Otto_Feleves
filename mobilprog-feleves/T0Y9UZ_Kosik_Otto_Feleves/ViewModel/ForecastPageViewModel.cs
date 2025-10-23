@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.Maui.Controls.Shapes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,22 +30,17 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel {
         private Color textColor = Colors.White; 
 
         [ObservableProperty] 
-        private bool isDarkTheme = true; 
+        private bool isDarkTheme = true;
 
-        [ObservableProperty] 
-        private bool detailsVisible = false; 
+        [ObservableProperty]
+        private ObservableCollection<ForecastPageItemsViewModel> forecastItems;
 
-        [ObservableProperty] 
-        private string textOfDetailsButton = "+"; 
 
-        public ForecastPageViewModel() 
-        { 
-        } 
-        [RelayCommand] 
-        private void ToggleDetails() 
-        { 
-            DetailsVisible = !DetailsVisible; 
-            TextOfDetailsButton = DetailsVisible ? "-" : "+"; 
-        } 
+        public ForecastPageViewModel()
+        {
+            ForecastItems = new ObservableCollection<ForecastPageItemsViewModel>();
+        }
+
+        
     } 
 }
