@@ -10,13 +10,43 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.Model
     public class WeatherService
     {
         private static readonly string API_KEY = "&appid=3787e126ab00325569b990fcc7bf26c9&units=metric";
-        private static readonly string BASE_API = "https://api.openweathermap.org/data/2.5/forecast?q=";
+        private static readonly string BASE_API_LOCATION = "https://api.openweathermap.org/data/2.5/forecast?q=";
+        private static readonly string BASE_API_COORDINATES = "https://api.openweathermap.org/data/2.5/forecast?lat=";
+        public static Location location;
+
+        public static async Task<string> FetchData()
+        {
+            try
+            {
+                location = await Geolocation.Default.GetLastKnownLocationAsync();
+
+                if(location != null)
+                {
+                    double latitude = location.Latitude;
+                    double longitude = location.Longitude;
+
+                    HttpClient client = new HttpClient();
+                    var responseMessage = await client.GetStringAsync($"{BASE_API_COORDINATES}{latitude}&lon={longitude}{API_KEY}");
+                    return responseMessage;
+                }
+
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public static async Task<string> FetchData(string location)
         {
             try
             {
                 HttpClient client = new HttpClient();
-                var responseMessage = await client.GetStringAsync($"{BASE_API}{location}{API_KEY}");
+                var responseMessage = await client.GetStringAsync($"{BASE_API_LOCATION}{location}{API_KEY}");
                 return responseMessage;
             }
             catch

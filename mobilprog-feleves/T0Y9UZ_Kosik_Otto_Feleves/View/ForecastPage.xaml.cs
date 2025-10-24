@@ -56,7 +56,7 @@ public partial class ForecastPage : ContentPage
             StrokeThickness = 2,
             Background = color,
             StrokeShape = new RoundRectangle { CornerRadius = 10 },
-            Margin = new Thickness(5),
+            Margin = new Thickness(1),
             BindingContext = itemVm // <-- EZ KELL IDE!!!
         };
 
@@ -71,11 +71,21 @@ public partial class ForecastPage : ContentPage
         var weatherIcon = new Image
         {
             Source = $"https://openweathermap.org/img/wn/{weatherForecasts.Icon}.png",
-            WidthRequest = 50,
-            HeightRequest = 50
+            WidthRequest = 75,
+            HeightRequest = 75
         };
-        weatherIcon.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
 
+        //weatherIcon.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
+
+        var temp = new Label
+        {
+            Text = $"{weatherForecasts.Temperature}°C",
+            HorizontalOptions = LayoutOptions.Center,
+            TextColor = vm.TextColor,
+            FontSize = 25
+        };
+        //temp.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
+        
         var weatherDescription = new Label
         {
             Text = $"{weatherForecasts.Description}",
@@ -83,14 +93,6 @@ public partial class ForecastPage : ContentPage
             TextColor = vm.TextColor
         };
         weatherDescription.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
-
-        var temp = new Label
-        {
-            Text = $"{weatherForecasts.Temperature}°C",
-            HorizontalOptions = LayoutOptions.Center,
-            TextColor = vm.TextColor
-        };
-        temp.SetBinding(IsVisibleProperty, new Binding(nameof(ForecastPageItemsViewModel.DetailsVisible)));
 
         var humidity = new Label
         {
@@ -122,14 +124,13 @@ public partial class ForecastPage : ContentPage
             Margin = 10,
             Spacing = 5,
             HorizontalOptions = LayoutOptions.Center,
-            VerticalOptions = LayoutOptions.Center,
-            WidthRequest = 200,
+            VerticalOptions = LayoutOptions.Center
         };
 
         verticalStack.Children.Add(dayLabel);
         verticalStack.Children.Add(weatherIcon);
-        verticalStack.Children.Add(weatherDescription);
         verticalStack.Children.Add(temp);
+        verticalStack.Children.Add(weatherDescription);
         verticalStack.Children.Add(humidity);
         verticalStack.Children.Add(wind);
         verticalStack.Children.Add(button);

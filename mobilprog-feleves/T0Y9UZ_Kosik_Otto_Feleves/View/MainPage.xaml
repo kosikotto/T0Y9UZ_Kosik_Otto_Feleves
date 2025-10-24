@@ -135,27 +135,33 @@
                     </Button>
                 </VerticalStackLayout>
             </Border>
-            
-            <FlexLayout
-                JustifyContent="SpaceAround">
+
+            <VerticalStackLayout
+                Spacing="10">
                 
                 <Button
                     Text="Home"
                     x:Name="MainPageButton"
-                    Clicked="OnMainPageClick"/>
+                    Clicked="OnMainPageClick"
+                    FontSize="20"
+                    FontAttributes="Bold"/>
 
                 <Button
                     Text="Forecast"
                     x:Name="ForecastPageButton"
                     IsEnabled="{Binding IsForecastButtonEnabled}"
-                    Clicked="OnForecastPageClick"/>
+                    Clicked="OnForecastPageClick"
+                    FontSize="20"
+                    FontAttributes="Bold"/>
 
                 <Button
                     Text="Settings"
                     x:Name="SettingsPageButton"
-                    Clicked="OnSettingsPageClick"/>
+                    Clicked="OnSettingsPageClick"
+                    FontSize="20"
+                    FontAttributes="Bold"/>
                     
-            </FlexLayout>
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

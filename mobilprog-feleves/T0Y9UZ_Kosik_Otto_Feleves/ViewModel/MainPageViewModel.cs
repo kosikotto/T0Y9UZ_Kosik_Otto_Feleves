@@ -45,12 +45,30 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
 
             if(_current == NetworkAccess.Internet)
             {
-                string defaultLocation = Preferences.Default.Get("DefaultLocation", string.Empty);
-                if (!string.IsNullOrEmpty(defaultLocation))
-                {
-                    SearchInput = defaultLocation;
-                    _ = DisplayValues();
-                }
+                _ = InitializeWithCoordinates();
+            }
+        }
+
+        public async Task InitializeWithCoordinates()
+        {
+            var responseMessage = await WeatherService.FetchData();
+            if (responseMessage != null)
+            {
+                await GenerateValues(responseMessage);
+            }
+            else
+            {
+                InitializeWithDefaultLocation();
+            }
+        }
+
+        public async Task InitializeWithDefaultLocation()
+        {
+            string defaultLocation = Preferences.Default.Get("DefaultLocation", string.Empty);
+            if (!string.IsNullOrEmpty(defaultLocation))
+            {
+                SearchInput = defaultLocation;
+                _ = DisplayValues();
             }
         }
 

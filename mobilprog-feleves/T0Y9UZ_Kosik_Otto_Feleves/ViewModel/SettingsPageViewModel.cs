@@ -49,9 +49,13 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
             } 
         }
 
+        [ObservableProperty]
+        private bool resetButtonEnabled = false;
+
         public SettingsPageViewModel()
         {
             DefaultLocationLable = Preferences.Default.Get("DefaultLocation", "Budapest");
+            ResetButtonEnabled = DefaultLocation != string.Empty;
         }
 
         [RelayCommand] 
@@ -81,12 +85,13 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
                     Preferences.Default.Set("DefaultLocation", DefaultLocationProperty);
                     DefaultLocationLable = DefaultLocationProperty;
                     DefaultLocationProperty = string.Empty;
-                    WeakReferenceMessenger.Default.Send("Default location updated successfully, please restart the application to apply changes.");
+                    ResetButtonEnabled = true;
+                    WeakReferenceMessenger.Default.Send("Default location has been updated successfully, please restart the application to apply the changes.");
                 }
 
                 else
                 {
-                    WeakReferenceMessenger.Default.Send("Please check if you entered a valid location.");
+                    WeakReferenceMessenger.Default.Send("Please check if you have entered a valid location.");
                 }
             } 
             else 
@@ -100,7 +105,8 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         {
             Preferences.Default.Remove("DefaultLocation");
             DefaultLocationLable = "Budapest";
-            WeakReferenceMessenger.Default.Send("Default location reset successfully, please restart the application to apply changes.");
+            ResetButtonEnabled = false;
+            WeakReferenceMessenger.Default.Send("Default location has been reseted successfully, please restart the application to apply changes.");
         }
     } 
 }

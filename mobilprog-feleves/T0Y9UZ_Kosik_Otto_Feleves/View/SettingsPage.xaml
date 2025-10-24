@@ -20,22 +20,21 @@
                 <VerticalStackLayout
                     Spacing="10">
                     <FlexLayout
+                        AlignContent="Center"
+                        AlignItems="Center"
                         HorizontalOptions="Fill"
-                        JustifyContent="SpaceAround">
+                        JustifyContent="SpaceAround"
+                        Wrap="Wrap"
+                        Margin="0,10,0,10">
                         <Label
                             Text="Dark/Light theme"
                             x:Name="LightDarkThemeLable"
-                            HorizontalOptions="Center"
-                            HorizontalTextAlignment="Center"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center"
                             FontSize="20"
                             TextColor="{Binding TextColor}"/>
 
                         <Button 
                             x:Name="LightDarkThemeButton"
                             Text="Theme"
-                            HorizontalOptions="Center"
                             Command="{Binding ChangeThemeCommand}"
                             BackgroundColor="{Binding BackgroundColor}"
                             TextColor="{Binding TextColor}"
@@ -43,49 +42,49 @@
                     </FlexLayout>
 
                     <FlexLayout
+                        AlignContent="Center"
+                        AlignItems="Center"
                         HorizontalOptions="Fill"
-                        JustifyContent="SpaceAround">
+                        JustifyContent="SpaceAround"
+                        Wrap="Wrap"
+                        Margin="0,10,0,10">
                         <Label
                             Text="Set default location"
                             x:Name="DefaultLocationLabel"
-                            HorizontalOptions="Center"
-                            HorizontalTextAlignment="Center"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center"
                             FontSize="20"
                             TextColor="{Binding TextColor}"/>
                         
                         <Entry
                             Placeholder="{Binding DefaultLocationLable}"
                             x:Name="DefaultLocationEntry"
-                            HorizontalOptions="Center"
-                            HorizontalTextAlignment="Center"
                             Text="{Binding DefaultLocationProperty}"
                             FontSize="20"
                             WidthRequest="150"/>
 
-                        <Button
-                            x:Name="SaveDefaultLocationButton"
-                            Text="Save"
-                            HorizontalOptions="Center"
-                            Command="{Binding ChangeDefaultLocationCommand}"
-                            BackgroundColor="{Binding BackgroundColor}"
-                            TextColor="{Binding TextColor}"
-                            />
+                        <HorizontalStackLayout
+                            Spacing="10">
+                            <Button
+                                x:Name="SaveDefaultLocationButton"
+                                Text="Save"
+                                Command="{Binding ChangeDefaultLocationCommand}"
+                                BackgroundColor="Green"
+                                TextColor="{Binding TextColor}"
+                                />
 
-                        <Button
-                            x:Name="ResetDefaultLocationButton"
-                            Text="Reset"
-                            HorizontalOptions="Center"
-                            Command="{Binding ResetDefaultLocationCommand}"
-                            BackgroundColor="{Binding BackgroundColor}"
-                            TextColor="{Binding TextColor}"
-                            />
+                            <Button
+                                x:Name="ResetDefaultLocationButton"
+                                Text="Reset"
+                                Command="{Binding ResetDefaultLocationCommand}"
+                                TextColor="{Binding TextColor}"
+                                IsEnabled="{Binding ResetButtonEnabled}"
+                                />
+                        </HorizontalStackLayout>
                     </FlexLayout>
 
                     <FlexLayout
                         HorizontalOptions="Fill"
-                        JustifyContent="SpaceAround">
+                        JustifyContent="SpaceAround"
+                        Wrap="Wrap">
                         <Label
                             Text="Version: 1.0"
                             x:Name="AppVersion"
@@ -97,26 +96,32 @@
                 </VerticalStackLayout>
             </Border>
             
-            <FlexLayout
-                JustifyContent="SpaceAround">
+            <VerticalStackLayout
+                Spacing="10">
 
                 <Button
                     Text="Home"
                     x:Name="MainPageButton"
-                    Clicked="OnMainPageClick"/>
+                    Clicked="OnMainPageClick"
+                    FontSize="20"
+                    FontAttributes="Bold"/>
 
                 <Button
                     Text="Forecast"
                     x:Name="ForecastPageButton"
                     IsEnabled="{Binding IsForecastButtonEnabled}"
-                    Clicked="OnForecastPageClick"/>
+                    Clicked="OnForecastPageClick"
+                    FontSize="20"
+                    FontAttributes="Bold"/>
 
                 <Button
                     Text="Settings"
                     x:Name="SettingsPageButton"
-                    Clicked="OnSettingsPageClick"/>
+                    Clicked="OnSettingsPageClick"
+                    FontSize="20"
+                    FontAttributes="Bold"/>
 
-            </FlexLayout>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
