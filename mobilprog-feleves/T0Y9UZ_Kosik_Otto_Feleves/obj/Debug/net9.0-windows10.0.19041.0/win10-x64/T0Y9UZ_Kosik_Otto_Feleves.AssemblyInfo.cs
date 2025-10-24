@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("T0Y9UZ_Kosik_Otto_Feleves")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+106031fe78701a2b52e299f7ac5d74a0a96a318b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+41affbbc5cf46fff65e2d60be5b6b3f5b7199699")]
 [assembly: System.Reflection.AssemblyProductAttribute("T0Y9UZ_Kosik_Otto_Feleves")]
 [assembly: System.Reflection.AssemblyTitleAttribute("T0Y9UZ_Kosik_Otto_Feleves")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

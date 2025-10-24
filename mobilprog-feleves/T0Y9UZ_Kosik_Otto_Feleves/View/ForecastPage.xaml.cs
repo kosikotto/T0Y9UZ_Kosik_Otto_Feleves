@@ -17,7 +17,7 @@ public partial class ForecastPage : ContentPage
         BindingContext = new ForecastPageViewModel();
     }
 
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    protected async override void OnNavigatedTo(NavigatedToEventArgs args)
     {
         base.OnNavigatedTo(args);
 
@@ -28,7 +28,7 @@ public partial class ForecastPage : ContentPage
         }
     }
 
-    public void Generator()
+    private async void Generator()
     {
         ForecastForFiveDays.Children.Clear();
         VerticalStackGenerate(WeatherForecasts[0], true, 0);
@@ -41,7 +41,7 @@ public partial class ForecastPage : ContentPage
         ForecastForFiveDaysContainer.IsVisible = true;
     }
 
-    public void VerticalStackGenerate(WeatherForecast weatherForecasts, bool current, int idx)
+    private async void VerticalStackGenerate(WeatherForecast weatherForecasts, bool current, int idx)
     {
         var itemVm = new ForecastPageItemsViewModel();
         var vm = BindingContext as ForecastPageViewModel;
@@ -56,6 +56,7 @@ public partial class ForecastPage : ContentPage
             StrokeThickness = 2,
             Background = color,
             StrokeShape = new RoundRectangle { CornerRadius = 10 },
+            Margin = new Thickness(5),
             BindingContext = itemVm // <-- EZ KELL IDE!!!
         };
 

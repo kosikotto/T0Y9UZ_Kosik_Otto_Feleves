@@ -4,8 +4,23 @@
         <name>T0Y9UZ_Kosik_Otto_Feleves</name>
     </assembly>
     <members>
-        <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel">
+        <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel">
             <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.DetailsVisible">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.detailsVisible"/>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.TextOfDetailsButton">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.textOfDetailsButton"/>
+        </member>
+        <member name="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.toggleDetailsCommand">
+            <summary>The backing field for <see cref="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.ToggleDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.ToggleDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageItemsViewModel.ToggleDetails"/>.</summary>
+        </member>
+        <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel">
             <inheritdoc/>
         </member>
         <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.GeoInfo">
@@ -23,17 +38,8 @@
         <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.IsDarkTheme">
             <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.isDarkTheme"/>
         </member>
-        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.DetailsVisible">
-            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.detailsVisible"/>
-        </member>
-        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.TextOfDetailsButton">
-            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.textOfDetailsButton"/>
-        </member>
-        <member name="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.toggleDetailsCommand">
-            <summary>The backing field for <see cref="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.ToggleDetailsCommand"/>.</summary>
-        </member>
-        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.ToggleDetailsCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.ToggleDetails"/>.</summary>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.ForecastItems">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.ForecastPageViewModel.forecastItems"/>
         </member>
         <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.MainPageViewModel">
             <inheritdoc/>
@@ -75,6 +81,7 @@
         <member name="T:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel">
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.GeoInfo">
             <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.geoInfo"/>
@@ -94,11 +101,20 @@
         <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.IsDarkTheme">
             <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.isDarkTheme"/>
         </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.DefaultLocationProperty">
+            <inheritdoc cref="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.defaultLocationProperty"/>
+        </member>
         <member name="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.changeThemeCommand">
             <summary>The backing field for <see cref="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeThemeCommand"/>.</summary>
         </member>
         <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeThemeCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeTheme"/>.</summary>
+        </member>
+        <member name="F:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.changeDefaultLocationCommand">
+            <summary>The backing field for <see cref="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeDefaultLocationCommand"/>.</summary>
+        </member>
+        <member name="P:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeDefaultLocationCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:T0Y9UZ_Kosik_Otto_Feleves.ViewModel.SettingsPageViewModel.ChangeDefaultLocation"/>.</summary>
         </member>
         <member name="T:T0Y9UZ_Kosik_Otto_Feleves.Resource">
             <summary>
@@ -111,6 +127,12 @@
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DetailsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DetailsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TextOfDetailsButton">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TextOfDetailsButton" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.GeoInfo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "GeoInfo" generated properties.</summary>
@@ -127,11 +149,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsDarkTheme">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsDarkTheme" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DetailsVisible">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DetailsVisible" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TextOfDetailsButton">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TextOfDetailsButton" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ForecastItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ForecastItems" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchInput">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchInput" generated properties.</summary>
@@ -145,11 +164,20 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsForecastButtonEnabled">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsForecastButtonEnabled" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DefaultLocationProperty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DefaultLocationProperty" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
             for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
             </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DetailsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DetailsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TextOfDetailsButton">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TextOfDetailsButton" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.GeoInfo">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "GeoInfo" generated properties.</summary>
@@ -166,11 +194,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsDarkTheme">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsDarkTheme" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DetailsVisible">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DetailsVisible" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TextOfDetailsButton">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TextOfDetailsButton" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ForecastItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ForecastItems" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchInput">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchInput" generated properties.</summary>
@@ -183,6 +208,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsForecastButtonEnabled">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsForecastButtonEnabled" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DefaultLocationProperty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DefaultLocationProperty" generated properties.</summary>
         </member>
     </members>
 </doc>

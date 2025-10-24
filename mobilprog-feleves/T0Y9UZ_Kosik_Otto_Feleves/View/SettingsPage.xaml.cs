@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.Messaging;
 using T0Y9UZ_Kosik_Otto_Feleves.Model;
 using T0Y9UZ_Kosik_Otto_Feleves.ViewModel;
 
@@ -9,6 +10,10 @@ public partial class SettingsPage : ContentPage
 	{
 		InitializeComponent();
         BindingContext = new SettingsPageViewModel();
+        WeakReferenceMessenger.Default.Register<string>(this, async (r, m) =>
+        {
+            await DisplayAlert("Warning", m, "Ok");
+        });
     }
 
     private async void OnMainPageClick(object? sender, EventArgs e)

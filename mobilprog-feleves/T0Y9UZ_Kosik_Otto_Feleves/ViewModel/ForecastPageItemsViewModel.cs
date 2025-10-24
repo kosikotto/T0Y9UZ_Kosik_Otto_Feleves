@@ -23,7 +23,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         }
 
         [RelayCommand]
-        private void ToggleDetails()
+        private async void ToggleDetails()
         {
             DetailsVisible = !DetailsVisible;
             TextOfDetailsButton = DetailsVisible ? "-" : "+";

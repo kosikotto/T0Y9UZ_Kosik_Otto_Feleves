@@ -56,11 +56,31 @@
                             TextColor="{Binding TextColor}"/>
                         
                         <Entry
-                            Placeholder="Budapest"
+                            Placeholder="{Binding DefaultLocationLable}"
                             x:Name="DefaultLocationEntry"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
-                            FontSize="20"/>
+                            Text="{Binding DefaultLocationProperty}"
+                            FontSize="20"
+                            WidthRequest="150"/>
+
+                        <Button
+                            x:Name="SaveDefaultLocationButton"
+                            Text="Save"
+                            HorizontalOptions="Center"
+                            Command="{Binding ChangeDefaultLocationCommand}"
+                            BackgroundColor="{Binding BackgroundColor}"
+                            TextColor="{Binding TextColor}"
+                            />
+
+                        <Button
+                            x:Name="ResetDefaultLocationButton"
+                            Text="Reset"
+                            HorizontalOptions="Center"
+                            Command="{Binding ResetDefaultLocationCommand}"
+                            BackgroundColor="{Binding BackgroundColor}"
+                            TextColor="{Binding TextColor}"
+                            />
                     </FlexLayout>
 
                     <FlexLayout

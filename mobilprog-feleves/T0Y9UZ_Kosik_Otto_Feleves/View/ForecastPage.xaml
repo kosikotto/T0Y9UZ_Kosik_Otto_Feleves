@@ -25,16 +25,15 @@
                     </Label>
 
                     <FlexLayout 
-                        Padding="30" 
+                        Padding="30"
                         x:Name="ForecastForFiveDays" 
                         HorizontalOptions="Center" 
-                        Wrap="Wrap" 
-                        JustifyContent="SpaceEvenly"
                         AlignItems="Start"
-                        AlignContent="Start">
-                        <VerticalStackLayout>
-
-                        </VerticalStackLayout>
+                        AlignContent="Start"
+                        Direction="Row"
+                        Wrap="Wrap" 
+                        JustifyContent="SpaceEvenly">
+                        
                     </FlexLayout>
                 </VerticalStackLayout>
             </Border>

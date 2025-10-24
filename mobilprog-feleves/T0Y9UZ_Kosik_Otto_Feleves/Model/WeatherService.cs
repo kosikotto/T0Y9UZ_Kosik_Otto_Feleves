@@ -24,7 +24,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.Model
                 return null;
             }
         }
-        public static List<object> ParseData(string responseMessage)
+        public static async Task<List<object>> ParseData(string responseMessage)
         {
             using JsonDocument doc = JsonDocument.Parse(responseMessage);
             JsonElement root = doc.RootElement;

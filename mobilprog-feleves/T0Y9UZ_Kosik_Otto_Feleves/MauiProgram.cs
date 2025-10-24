@@ -20,8 +20,17 @@ namespace T0Y9UZ_Kosik_Otto_Feleves
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddSingleton<ForecastPage>();
+            builder.Services.AddSingleton<ForecastPageViewModel>();
+            builder.Services.AddSingleton<ForecastPageItemsViewModel>();
+            builder.Services.AddSingleton<SettingsPage>();
+            builder.Services.AddSingleton<SettingsPageViewModel>();
+            
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -1,61 +1,106 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using T0Y9UZ_Kosik_Otto_Feleves.Model;
-
-namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
-{
+namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel 
+{ 
     [QueryProperty(nameof(GeoInfo), "geoInfo")]
     [QueryProperty(nameof(WeatherForecasts), "weatherForecasts")]
     [QueryProperty(nameof(IsForecastButtonEnabled), "IsForecastButtonEnabled")]
     [QueryProperty(nameof(BackgroundColor), "BackgroundColor")]
     [QueryProperty(nameof(TextColor), "TextColor")]
-    [QueryProperty(nameof(IsDarkTheme), "IsDarkTheme")]
-    public partial class SettingsPageViewModel:ObservableObject
-    {
+    [QueryProperty(nameof(IsDarkTheme), "IsDarkTheme")] 
+    public partial class SettingsPageViewModel : ObservableObject 
+    { 
+        [ObservableProperty] 
+        private GeoInfo geoInfo; 
+        [ObservableProperty] 
+        private List<WeatherForecast> weatherForecasts; 
+        [ObservableProperty] 
+        private bool isForecastButtonEnabled; 
+        [ObservableProperty] 
+        private Color backgroundColor = Colors.DarkSlateBlue; 
+        [ObservableProperty] 
+        private Color textColor = Colors.White; 
+        [ObservableProperty] 
+        private bool isDarkTheme = true; 
+        [ObservableProperty] 
+        private string defaultLocationProperty;
         [ObservableProperty]
-        private GeoInfo geoInfo;
-
-        [ObservableProperty]
-        private List<WeatherForecast> weatherForecasts;
-
-        [ObservableProperty]
-        private bool isForecastButtonEnabled;
-
-        [ObservableProperty]
-        private Color backgroundColor = Colors.DarkSlateBlue;
-
-        [ObservableProperty]
-        private Color textColor = Colors.White;
-
-        [ObservableProperty]
-        private bool isDarkTheme = true;
+        private string defaultLocationLable;
+        public string DefaultLocation 
+        { 
+            get 
+            { 
+                return Preferences.Default.Get("DefaultLocation", string.Empty); 
+            } 
+            set 
+            { 
+                if (!string.IsNullOrEmpty(value)) 
+                { 
+                    Preferences.Default.Set("DefaultLocation", value); 
+                    OnPropertyChanged(); 
+                } 
+            } 
+        }
 
         public SettingsPageViewModel()
         {
+            DefaultLocationLable = Preferences.Default.Get("DefaultLocation", "Budapest");
+        }
 
+        [RelayCommand] 
+        private void ChangeTheme() 
+        { 
+            if (IsDarkTheme) 
+            { 
+                BackgroundColor = Colors.LightBlue; 
+                TextColor = Colors.Black; 
+                IsDarkTheme = false; 
+            } 
+            else 
+            { 
+                BackgroundColor = Colors.DarkSlateBlue; 
+                TextColor = Colors.White; 
+                IsDarkTheme = true; 
+            } 
+        } 
+        [RelayCommand] 
+        private async void ChangeDefaultLocation() 
+        { 
+            if (!string.IsNullOrEmpty(DefaultLocationProperty)) 
+            { 
+                var tmp = await WeatherService.FetchData(DefaultLocationProperty);
+                if (tmp != null)
+                {
+                    Preferences.Default.Set("DefaultLocation", DefaultLocationProperty);
+                    DefaultLocationLable = DefaultLocationProperty;
+                    DefaultLocationProperty = string.Empty;
+                    WeakReferenceMessenger.Default.Send("Default location updated successfully, please restart the application to apply changes.");
+                }
+
+                else
+                {
+                    WeakReferenceMessenger.Default.Send("Please check if you entered a valid location.");
+                }
+            } 
+            else 
+            { 
+                WeakReferenceMessenger.Default.Send("Default location cannot be empty!"); 
+            }
         }
 
         [RelayCommand]
-        public void ChangeTheme()
+        private async void ResetDefaultLocation()
         {
-            if(IsDarkTheme)
-            {
-                BackgroundColor = Colors.LightBlue;
-                TextColor = Colors.Black;
-                IsDarkTheme = false;
-            }
-
-            else
-            {
-                BackgroundColor = Colors.DarkSlateBlue;
-                TextColor = Colors.White;
-                IsDarkTheme = true;
-            }
+            Preferences.Default.Remove("DefaultLocation");
+            DefaultLocationLable = "Budapest";
+            WeakReferenceMessenger.Default.Send("Default location reset successfully, please restart the application to apply changes.");
         }
-    }
+    } 
 }
