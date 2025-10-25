@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\viewmodel\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\viewmodel\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\model\\locationdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\model\\locationdatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\view\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\view\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\viewmodel\\editsavedlocationpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\viewmodel\\editsavedlocationpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\view\\editsavedlocationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\view\\editsavedlocationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|d:\\mobilprog_maui\\t0y9uz_kosik_otto_feleves\\mobilprog-feleves\\t0y9uz_kosik_otto_feleves\\viewmodel\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18BF2890-EA17-4E07-94EF-FA2ADC18C9DE}|T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj|solutionrelative:t0y9uz_kosik_otto_feleves\\viewmodel\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +38,88 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LocationDatabase.cs",
-              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\Model\\LocationDatabase.cs",
-              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\Model\\LocationDatabase.cs",
-              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\Model\\LocationDatabase.cs",
-              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\Model\\LocationDatabase.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T11:00:31.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainPageViewModel.cs",
-              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
-              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
-              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
-              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAmwJkAAAANAAAAAAAAAA==",
+              "Title": "SettingsPage.xaml.cs",
+              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\SettingsPage.xaml.cs",
+              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\View\\SettingsPage.xaml.cs",
+              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\SettingsPage.xaml.cs*",
+              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\View\\SettingsPage.xaml.cs*",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAF0AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T03:18:40.828Z",
+              "WhenOpened": "2025-10-25T18:02:20.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "EditSavedLocationPage.xaml",
+              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\EditSavedLocationPage.xaml",
+              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\View\\EditSavedLocationPage.xaml",
+              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\EditSavedLocationPage.xaml",
+              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\View\\EditSavedLocationPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-25T18:00:16.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\MainPage.xaml",
               "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\View\\MainPage.xaml",
               "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\MainPage.xaml",
               "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\View\\MainPage.xaml",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAAAKAAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAIAwwKgAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-24T21:16:34.918Z",
+              "WhenOpened": "2025-10-25T17:17:54.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditSavedLocationPageViewModel.cs",
+              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\EditSavedLocationPageViewModel.cs",
+              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\EditSavedLocationPageViewModel.cs",
+              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\EditSavedLocationPageViewModel.cs",
+              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\EditSavedLocationPageViewModel.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAxwDgAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T15:56:32.431Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "7a9951eb-f88c-49ab-ae3c-f747411cd17b",
+        "Display": 1,
+        "X": -5,
+        "Y": 85,
+        "Width": 1290,
+        "Height": 896,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainPageViewModel.cs",
+              "DocumentMoniker": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
+              "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
+              "ToolTip": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
+              "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAuwK0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T03:18:40.828Z",
               "EditorCaption": ""
             }
           ]

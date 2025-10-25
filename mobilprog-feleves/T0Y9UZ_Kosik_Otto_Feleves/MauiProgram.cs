@@ -27,7 +27,8 @@ namespace T0Y9UZ_Kosik_Otto_Feleves
             builder.Services.AddSingleton<ForecastPageItemsViewModel>();
             builder.Services.AddSingleton<SettingsPage>();
             builder.Services.AddSingleton<SettingsPageViewModel>();
-            
+            builder.Services.AddTransient<EditSavedLocationPage>();
+            builder.Services.AddTransient<EditSavedLocationPageViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();

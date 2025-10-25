@@ -15,7 +15,10 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
     [QueryProperty(nameof(WeatherForecasts), "weatherForecasts")]
     [QueryProperty(nameof(BackgroundColor), "BackgroundColor")]
     [QueryProperty(nameof(TextColor), "TextColor")]
-    [QueryProperty(nameof(IsDarkTheme), "IsDarkTheme")] 
+    [QueryProperty(nameof(IsDarkTheme), "IsDarkTheme")]
+    [QueryProperty(nameof(UpdateSelectedItem), "UpdateSelectedItem")]
+    [QueryProperty(nameof(database), "Database")]
+    [QueryProperty(nameof(Locations), "Locations")]
     public partial class MainPageViewModel : ObservableObject 
     { 
         private readonly NetworkAccess _current = Connectivity.Current.NetworkAccess;
@@ -23,7 +26,10 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         [ObservableProperty]
         private SavedLocation selectedItem;
 
-        private ILocationDatabase database;
+        [ObservableProperty]
+        private SavedLocation updateSelectedItem;
+
+        public ILocationDatabase database;
 
         [ObservableProperty] 
         private string searchInput; 
@@ -151,6 +157,21 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
             {
                 await database.DeleteLocationAsync(SelectedItem);
                 Locations.Remove(SelectedItem);
+            }
+        }
+
+        [RelayCommand]
+        private async Task UpdateLocationFromFav()
+        {
+            if(SelectedItem != null)
+            {
+                await Shell.Current.GoToAsync("//EditSavedLocationPage", new ShellNavigationQueryParameters()
+                {
+                    { "savedLocation", SelectedItem },
+                    { "BackgroundColor", BackgroundColor },
+                    { "TextColor", TextColor },
+                    { "MainPageViewModel", this }
+                });
             }
         }
 

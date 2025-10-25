@@ -64,33 +64,33 @@ public partial class SettingsPage : ContentPage
     }
     private async void OnSettingsPageClick(object? sender, EventArgs e)
     {
-        if ((BindingContext as SettingsPageViewModel).GeoInfo != null && (BindingContext as SettingsPageViewModel).WeatherForecasts != null)
-        {
-            //await Shell.Current.GoToAsync(($"//SettingsPage"), animate: true, parameters: new Dictionary<string, object>
-            //{
-            //    { "geoInfo", this.GeoInfo },
-            //    { "weatherForecasts", this.WeatherForecasts }
-            //});
+        //if ((BindingContext as SettingsPageViewModel).GeoInfo != null && (BindingContext as SettingsPageViewModel).WeatherForecasts != null)
+        //{
+        //    //await Shell.Current.GoToAsync(($"//SettingsPage"), animate: true, parameters: new Dictionary<string, object>
+        //    //{
+        //    //    { "geoInfo", this.GeoInfo },
+        //    //    { "weatherForecasts", this.WeatherForecasts }
+        //    //});
 
-            await Shell.Current.GoToAsync($"//SettingsPage", animate: true, new ShellNavigationQueryParameters()
-                {
-                    { "geoInfo", (BindingContext as SettingsPageViewModel).GeoInfo },
-                    { "weatherForecasts", (BindingContext as SettingsPageViewModel).WeatherForecasts },
-                    { "BackgroundColor", (BindingContext as SettingsPageViewModel).BackgroundColor },
-                    { "TextColor", (BindingContext as SettingsPageViewModel).TextColor },
-                    { "IsForecastButtonEnabled", (BindingContext as MainPageViewModel).IsForecastButtonEnabled },
-                    { "IsDarkTheme", (BindingContext as SettingsPageViewModel).IsDarkTheme }
-                });
-        }
-        else
-        {
-            await Shell.Current.GoToAsync($"//SettingsPage", animate: true, new ShellNavigationQueryParameters()
-            {
-                { "BackgroundColor", (BindingContext as SettingsPageViewModel).BackgroundColor },
-                { "TextColor", (BindingContext as SettingsPageViewModel).TextColor },
-                { "IsForecastButtonEnabled", (BindingContext as MainPageViewModel).IsForecastButtonEnabled },
-                { "IsDarkTheme", (BindingContext as SettingsPageViewModel).IsDarkTheme }
-            });
-        }
+        //    await Shell.Current.GoToAsync($"//SettingsPage", animate: true, new ShellNavigationQueryParameters()
+        //        {
+        //            { "geoInfo", (BindingContext as SettingsPageViewModel).GeoInfo },
+        //            { "weatherForecasts", (BindingContext as SettingsPageViewModel).WeatherForecasts },
+        //            { "BackgroundColor", (BindingContext as SettingsPageViewModel).BackgroundColor },
+        //            { "TextColor", (BindingContext as SettingsPageViewModel).TextColor },
+        //            { "IsForecastButtonEnabled", (BindingContext as MainPageViewModel).IsForecastButtonEnabled },
+        //            { "IsDarkTheme", (BindingContext as SettingsPageViewModel).IsDarkTheme }
+        //        });
+        //}
+        //else
+        //{
+        //    await Shell.Current.GoToAsync($"//SettingsPage", animate: true, new ShellNavigationQueryParameters()
+        //    {
+        //        { "BackgroundColor", (BindingContext as SettingsPageViewModel).BackgroundColor },
+        //        { "TextColor", (BindingContext as SettingsPageViewModel).TextColor },
+        //        { "IsForecastButtonEnabled", (BindingContext as MainPageViewModel).IsForecastButtonEnabled },
+        //        { "IsDarkTheme", (BindingContext as SettingsPageViewModel).IsDarkTheme }
+        //    });
+        //}
     }
 }

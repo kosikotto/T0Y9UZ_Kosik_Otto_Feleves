@@ -23,4 +23,10 @@
         ContentTemplate="{DataTemplate local:SettingsPage}"
         Route="SettingsPage"
         Shell.FlyoutBehavior="Disabled"/>
+
+    <ShellContent
+        Title="EditPage"
+        ContentTemplate="{DataTemplate local:EditSavedLocationPage}"
+        Route="EditSavedLocationPage"
+        Shell.FlyoutBehavior="Disabled"/>
 </Shell>

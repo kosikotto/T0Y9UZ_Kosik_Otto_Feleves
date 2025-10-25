@@ -51,6 +51,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/EditSavedLocationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.View.EditSavedLocationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\EditSavedLocationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\EditSavedLocationPage.xaml
+
 [D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/ForecastPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.View.ForecastPage.xaml

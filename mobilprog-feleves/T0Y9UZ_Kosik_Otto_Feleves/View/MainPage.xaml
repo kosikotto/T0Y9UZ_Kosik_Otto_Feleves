@@ -142,14 +142,12 @@
                 StrokeShape="RoundRectangle 20,20,20,20"
                 Padding="10"
                 BackgroundColor="Coral">
-                <FlexLayout
-                    x:Name="DbItemsFav"
-                    AlignContent="Start"
-                    AlignItems="Center"
-                    Direction="Column">
+                <VerticalStackLayout
+                    x:Name="DbItemsFav">
 
                     <Label
                         Text="Favorite locations" 
+                        HorizontalTextAlignment="Center"
                         FontSize="30" 
                         TextColor="{Binding TextColor}"
                         FontAttributes="Bold"
@@ -164,9 +162,10 @@
 
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="local2:SavedLocation">
-                                <Border Margin="5" Padding="5"
-                                    Stroke="Brown" StrokeThickness="2" StrokeShape="RoundRectangle 10">
-                                    <VerticalStackLayout>
+                                <Border Padding="15"
+                                    Stroke="Black" StrokeThickness="2" StrokeShape="RoundRectangle 20,20,20,20">
+                                    <VerticalStackLayout
+                                        HorizontalOptions="Center">
                                         <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Location}"/>
                                     </VerticalStackLayout>
                                 </Border>
@@ -180,16 +179,23 @@
                         <Button
                             Text="Add"
                             BackgroundColor="Green"
+                            FontAttributes="Bold"
+                            FontSize="20"
                             Command="{Binding AddLocationToFavCommand}"/>
                         <Button
                             Text="Update"
-                            BackgroundColor="Yellow"/>
+                            BackgroundColor="Yellow"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Command="{Binding UpdateLocationFromFavCommand}"/>
                         <Button
                             Text="Delete"
+                            FontAttributes="Bold"
+                            FontSize="20"
                             BackgroundColor="Red"
                             Command="{Binding DeleteLocationFromFavCommand}"/>
                     </VerticalStackLayout>
-                </FlexLayout>
+                </VerticalStackLayout>
             </Border>
 
             <VerticalStackLayout
