@@ -1,0 +1,10 @@
+images\cloudness;images\cloudness
+images\humidity;images\humidity
+images\pressure;images\pressure
+images\sun;images\sun
+images\wallpaper1;images\wallpaper1
+images\wallpaper2;images\wallpaper2
+images\wallpaper3;images\wallpaper3
+images\wallpaper4;images\wallpaper4
+images\wind;images\wind
+raw\aboutassets;raw\AboutAssets
