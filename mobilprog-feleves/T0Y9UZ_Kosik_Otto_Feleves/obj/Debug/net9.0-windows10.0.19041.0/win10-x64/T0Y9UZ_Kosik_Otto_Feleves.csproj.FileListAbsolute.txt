@@ -1051,3 +1051,8 @@ D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_
 D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.FileProviders.Physical.dll
 D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLite-net.dll
+D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.batteries_v2.dll
+D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.core.dll
+D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\e_sqlite3.dll
