@@ -1,231 +1,272 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves"
+             xmlns:local="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves.ViewModel"
              xmlns:local2="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves.Model"
-             x:Class="T0Y9UZ_Kosik_Otto_Feleves.View.MainPage">
+             x:Class="T0Y9UZ_Kosik_Otto_Feleves.View.MainPage"
+             x:DataType="local:MainPageViewModel"
+             MaximumWidthRequest="600"
+             BackgroundImageSource="{Binding BackgroundImage}">
 
     <ScrollView>
-        <VerticalStackLayout
-            BackgroundColor="{Binding BackgroundColor}"
-            Padding="50"
-            Spacing="30">
+            <FlexLayout
+                Padding="50"
+                Direction="Column"
+                JustifyContent="SpaceAround">
 
-            <Border
-                x:Name="WeatherInfo"
-                IsVisible="{Binding IsWeatherVisible}"
-                Stroke="Black"
-                StrokeShape="RoundRectangle 20,20,20,20"
-                Padding="10"
-                BackgroundColor="Coral">
-                
-                <VerticalStackLayout 
-                    HorizontalOptions="Fill" 
-                    Spacing="5">
+                <Border
+                    x:Name="WeatherInfo"
+                    IsVisible="{Binding IsWeatherVisible}"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2"
+                    Shadow="0 0 10 #FFFFFF 0.25"
+                    Padding="10"
+                    BackgroundColor="{Binding CardColor}"
+                    Margin="0,0,0,20">
 
-                    <FlexLayout 
-                    JustifyContent="Center"
-                    Wrap="Wrap">
-                        <Image x:Name="TempImage" Source="{Binding WeatherForecasts[0].Icon, StringFormat='https://openweathermap.org/img/wn/{0}.png'}" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="80" Aspect="AspectFit">
-                        </Image>
-                        <Label x:Name="TempValue" Text="{Binding WeatherForecasts[0].Temperature}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30" TextColor="{Binding TextColor}">
+                    <VerticalStackLayout 
+                        HorizontalOptions="Fill" 
+                        Spacing="5">
+
+                        <FlexLayout 
+                            Direction="Column"
+                            Wrap="NoWrap"
+                            AlignItems="Center">
+                            <Image x:Name="TempImage" Source="{Binding WeatherForecasts[0].Icon, StringFormat='https://openweathermap.org/img/wn/{0}.png'}" WidthRequest="80" Aspect="AspectFit">
+                            </Image>
+                            <Label x:Name="TempValue" Text="{Binding WeatherForecasts[0].Temperature, StringFormat='{0}°C'}" HorizontalOptions="Center" VerticalOptions="Center" FontSize="30" TextColor="{Binding TextColor}">
+                            </Label>
+                        </FlexLayout>
+
+                        <Label x:Name="WeatherDescription" HorizontalOptions="Center" Text="{Binding WeatherForecasts[0].Description}" TextColor="{Binding TextColor}" FontSize="25">
                         </Label>
+                        <Label x:Name="CityName" HorizontalOptions="Center" Text="{Binding GeoInfo.CityName}" TextColor="{Binding TextColor}" FontSize="20">
+                        </Label>
+                        <Label x:Name="CurrentDate" HorizontalOptions="Center" Text="{Binding GeoInfo.CurrentDate}" TextColor="{Binding TextColor}" FontSize="15">
+                        </Label>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    x:Name="WeatherDetails"
+                    IsVisible="{Binding IsDetailsVisible}"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2"
+                    Shadow="0 0 10 #FFFFFF 0.25"
+                    Padding="10"
+                    BackgroundColor="{Binding CardColor}"
+                    Margin="0,0,0,20">
+                    <FlexLayout 
+                        JustifyContent="SpaceEvenly"
+                        Wrap="Wrap">
+
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="HumidityIcon" HorizontalOptions="Center" Source="humidity.png" HeightRequest="100" WidthRequest="100">
+                            </Image>
+
+                            <Label x:Name="HumidityLabel" Text="{Binding WeatherForecasts[0].Humidity, StringFormat='{0}%'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
+                            </Label>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="WindIcon" HorizontalOptions="Center" Source="wind.png" HeightRequest="100" WidthRequest="100">
+                            </Image>
+
+                            <Label x:Name="WindLabel" Text="{Binding WeatherForecasts[0].WindSpeed, StringFormat='{0} m/s'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
+                            </Label>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="PressureIcon" HorizontalOptions="Center" Source="pressuregauge.png" HeightRequest="100" WidthRequest="100">
+                            </Image>
+
+                            <Label x:Name="PressureLabel" Text="{Binding WeatherForecasts[0].Pressure, StringFormat='{0} hPa'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
+                            </Label>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Image x:Name="CloudnessIcon" HorizontalOptions="Center" Source="cloudness.png" HeightRequest="100" WidthRequest="100">
+                            </Image>
+
+                            <Label x:Name="CloudnessLabel" Text="{Binding WeatherForecasts[0].Clouds, StringFormat='{0}%'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
+                            </Label>
+                        </VerticalStackLayout>
+
                     </FlexLayout>
+                </Border>
 
-                    <Label x:Name="CityName" HorizontalOptions="Center" Text="{Binding GeoInfo.CityName}" TextColor="{Binding TextColor}">
-                    </Label>
-                    <Label x:Name="WeatherDescription" HorizontalOptions="Center" Text="{Binding WeatherForecasts[0].Description}" TextColor="{Binding TextColor}">
-                    </Label>
-                    <Label x:Name="CurrentDate" HorizontalOptions="Center" Text="{Binding GeoInfo.CurrentDate}" TextColor="{Binding TextColor}">
-                    </Label>
-                </VerticalStackLayout>
-            </Border>
-
-            <Border
-                x:Name="WeatherDetails"
-                IsVisible="{Binding IsDetailsVisible}"
-                Stroke="Black"
-                StrokeShape="RoundRectangle 20,20,20,20"
-                Padding="10"
-                BackgroundColor="Coral">
-                <FlexLayout 
-                    JustifyContent="SpaceEvenly"
-                    Wrap="Wrap">
-
+                <Border
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2"
+                    Shadow="0 0 10 #FFFFFF 0.25"
+                    Padding="10"
+                    BackgroundColor="{Binding CardColor}"
+                    Margin="0,0,0,20">
                     <VerticalStackLayout Spacing="5">
-                        <Image x:Name="HumidityIcon" HorizontalOptions="Center" Source="humidity.png" HeightRequest="100" WidthRequest="100">
-                        </Image>
-
-                        <Label x:Name="HumidityLabel" Text="{Binding WeatherForecasts[0].Humidity, StringFormat='{0}%'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
+                        <Label 
+                            Text="Search" 
+                            FontSize="30" 
+                            HorizontalTextAlignment="Center"
+                            Margin="0,0,0,15"
+                            TextColor="{Binding TextColor}"
+                            FontAttributes="Bold">
                         </Label>
-                    </VerticalStackLayout>
 
-                    <VerticalStackLayout Spacing="5">
-                        <Image x:Name="WindIcon" HorizontalOptions="Center" Source="wind.png" HeightRequest="100" WidthRequest="100">
-                        </Image>
-
-                        <Label x:Name="WindLabel" Text="{Binding WeatherForecasts[0].WindSpeed, StringFormat='{0} m/s'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
-                        </Label>
-                    </VerticalStackLayout>
-
-                    <VerticalStackLayout Spacing="5">
-                        <Image x:Name="PressureIcon" HorizontalOptions="Center" Source="pressure.png" HeightRequest="100" WidthRequest="100">
-                        </Image>
-
-                        <Label x:Name="PressureLabel" Text="{Binding WeatherForecasts[0].Pressure, StringFormat='{0} hPa'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
-                        </Label>
-                    </VerticalStackLayout>
-
-                    <VerticalStackLayout Spacing="5">
-                        <Image x:Name="CloudnessIcon" HorizontalOptions="Center" Source="cloudness.png" HeightRequest="100" WidthRequest="100">
-                        </Image>
-
-                        <Label x:Name="CloudnessLabel" Text="{Binding WeatherForecasts[0].Clouds, StringFormat='{0}%'}" HorizontalOptions="Center" TextColor="{Binding TextColor}">
-                        </Label>
-                    </VerticalStackLayout>
-
-                </FlexLayout>
-            </Border>
-
-            <Border
-                Stroke="Black"
-                StrokeShape="RoundRectangle 20,20,20,20"
-                Padding="10"
-                BackgroundColor="Coral">
-                <VerticalStackLayout Spacing="5">
-                    <Label 
-                        Text="Search" 
-                        FontSize="30" 
-                        HorizontalTextAlignment="Center"
-                        Margin="0,0,0,15"
-                        TextColor="{Binding TextColor}"
-                        FontAttributes="Bold">
-                    </Label>
-
-                    <FlexLayout 
-                    Wrap="Wrap" 
-                    JustifyContent="SpaceEvenly" 
-                    Padding="5">
+                        <FlexLayout 
+                            Wrap="Wrap" 
+                            JustifyContent="SpaceEvenly" 
+                            Padding="5">
 
                         <Label 
-                            Text="Location:" 
-                            FontSize="20" 
-                            VerticalTextAlignment="Center" 
-                            TextColor="{Binding TextColor}">
+                                Text="Location:" 
+                                FontSize="20" 
+                                VerticalTextAlignment="Center" 
+                                TextColor="{Binding TextColor}">
                         </Label>
-                        <Entry 
-                            x:Name="SearchInput" 
-                            Placeholder="Budapest" 
-                            WidthRequest="150" 
-                            FontSize="20"
-                            VerticalOptions="Center"
-                            Text="{Binding SearchInput}">
-                        </Entry>
+
+                        <Entry
+                                x:Name="SearchInput" 
+                                Placeholder="Budapest"
+                                WidthRequest="150"
+                                FontSize="20"
+                                PlaceholderColor="{Binding PlaceholderColor}"
+                                VerticalOptions="Center"
+                                Text="{Binding SearchInput}"
+                                TextColor="{Binding TextColor}"/>
                     </FlexLayout>
 
-                    <Button 
-                        x:Name="SearchButton" 
-                        Text="Search" 
-                        Command="{Binding DisplayValuesCommand}"
-                        Margin="10"
-                        Background="Red"
-                        BorderColor="Black"
+                        <Button 
+                            x:Name="SearchButton" 
+                            Text="Search" 
+                            Command="{Binding DisplayValuesCommand}"
+                            Margin="10"
+                            Background="{Binding ButtonsColor}"
+                            BorderColor="#001999"
+                            BorderWidth="2"
+                            TextColor="White"
+                            Shadow="0 0 5 #FFFFFF 0.25"
+                            FontSize="20">
+                        </Button>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2"
+                    Shadow="0 0 10 #FFFFFF 0.25"
+                    Padding="10"
+                    BackgroundColor="{Binding CardColor}"
+                    Margin="0,0,0,20">
+                    <VerticalStackLayout
+                        x:Name="DbItemsFav"
+                        Padding="10">
+
+                        <Label
+                            Text="Favorite locations" 
+                            HorizontalTextAlignment="Center"
+                            FontSize="30" 
+                            TextColor="{Binding TextColor}"
+                            FontAttributes="Bold"
+                            Margin="0,0,0,20">
+                        </Label>
+
+                        <CollectionView 
+                            ItemsSource="{Binding Locations}"
+                            SelectedItem="{Binding SelectedItem}"
+                            SelectionMode="Single"
+                            Margin="0,0,0,20">
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="local2:SavedLocation">
+                                    <Border 
+                                        Padding="15"
+                                        Stroke="White" 
+                                        Background="#000060"
+                                        Shadow="0 0 5 #FFFFFF 0.25"
+                                        StrokeThickness="2" 
+                                        StrokeShape="RoundRectangle 20,20,20,20">
+                                        <VerticalStackLayout
+                                            HorizontalOptions="Center">
+                                            <Label 
+                                                FontSize="Medium" 
+                                                TextColor="{Binding BindingContext.TextColor, Source={x:Reference Name=DbItemsFav}}"
+
+                                                FontAttributes="Bold" 
+                                                Text="{Binding Location}"/>
+                                        </VerticalStackLayout>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+                        <VerticalStackLayout
+                            Spacing="20">
+                            <Button
+                                Text="Add"
+                                Background="DarkGreen"
+                                BorderColor="#001999"
+                                BorderWidth="2"
+                                TextColor="White"
+                                Shadow="0 0 5 #FFFFFF 0.25"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Command="{Binding AddLocationToFavCommand}"/>
+                            <Button
+                                Text="Update"
+                                Background="#ffb901"
+                                BorderColor="#001999"
+                                BorderWidth="2"
+                                TextColor="White"
+                                Shadow="0 0 5 #FFFFFF 0.25"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Command="{Binding UpdateLocationFromFavCommand}"/>
+                            <Button
+                                Text="Delete"
+                                Background="DarkRed"
+                                BorderColor="#001999"
+                                BorderWidth="2"
+                                TextColor="White"
+                                Shadow="0 0 5 #FFFFFF 0.25"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Command="{Binding DeleteLocationFromFavCommand}"/>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout
+                    Spacing="10">
+
+                    <Button
+                        Text="Forecast"
+                        x:Name="ForecastPageButton"
+                        IsEnabled="{Binding IsForecastButtonEnabled}"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Background="{Binding ForecastButtonColor}"
+                        BorderColor="#001999"
                         BorderWidth="2"
                         TextColor="White"
-                        FontSize="20">
-                    </Button>
-                </VerticalStackLayout>
-            </Border>
+                        Shadow="0 0 5 #FFFFFF 0.25"
+                        Command="{Binding NavigateToForecastCommand}"/>
 
-            <Border
-                Stroke="Black"
-                StrokeShape="RoundRectangle 20,20,20,20"
-                Padding="10"
-                BackgroundColor="Coral">
-                <VerticalStackLayout
-                    x:Name="DbItemsFav">
-
-                    <Label
-                        Text="Favorite locations" 
-                        HorizontalTextAlignment="Center"
-                        FontSize="30" 
-                        TextColor="{Binding TextColor}"
+                    <Button
+                        Text="Settings"
+                        x:Name="SettingsPageButton"
+                        FontSize="20"
                         FontAttributes="Bold"
-                        Margin="0,0,0,20">
-                    </Label>
+                        Background="{Binding NavButtonsColor}"
+                        BorderColor="#001999"
+                        BorderWidth="2"
+                        TextColor="White"
+                        Shadow="0 0 5 #FFFFFF 0.25"
+                        Command="{Binding NavigateToSettingsCommand}"/>
 
-                    <CollectionView 
-                        ItemsSource="{Binding Locations}"
-                        SelectedItem="{Binding SelectedItem}"
-                        SelectionMode="Single"
-                        Margin="0,0,0,20">
-
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="local2:SavedLocation">
-                                <Border Padding="15"
-                                    Stroke="Black" StrokeThickness="2" StrokeShape="RoundRectangle 20,20,20,20">
-                                    <VerticalStackLayout
-                                        HorizontalOptions="Center">
-                                        <Label FontSize="Medium" FontAttributes="Bold" Text="{Binding Location}"/>
-                                    </VerticalStackLayout>
-                                </Border>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-
-                    </CollectionView>
-
-                    <VerticalStackLayout
-                        Spacing="10">
-                        <Button
-                            Text="Add"
-                            BackgroundColor="Green"
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            Command="{Binding AddLocationToFavCommand}"/>
-                        <Button
-                            Text="Update"
-                            BackgroundColor="Yellow"
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            Command="{Binding UpdateLocationFromFavCommand}"/>
-                        <Button
-                            Text="Delete"
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            BackgroundColor="Red"
-                            Command="{Binding DeleteLocationFromFavCommand}"/>
-                    </VerticalStackLayout>
-                </VerticalStackLayout>
-            </Border>
-
-            <VerticalStackLayout
-                Spacing="10">
-                
-                <Button
-                    Text="Home"
-                    x:Name="MainPageButton"
-                    Clicked="OnMainPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
-
-                <Button
-                    Text="Forecast"
-                    x:Name="ForecastPageButton"
-                    IsEnabled="{Binding IsForecastButtonEnabled}"
-                    Clicked="OnForecastPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
-
-                <Button
-                    Text="Settings"
-                    x:Name="SettingsPageButton"
-                    Clicked="OnSettingsPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
-                    
             </VerticalStackLayout>
 
-        </VerticalStackLayout>
+            </FlexLayout>
     </ScrollView>
 
 </ContentPage>

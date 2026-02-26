@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "huMznq+APh8=",
+  "dgSpecHash": "eC5TYalD6as=",
   "success": true,
-  "projectFilePath": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj",
+  "projectFilePath": "C:\\Users\\T460p\\Desktop\\Docs\\Suli\\Egyetemi anyagok\\5. szemeszter\\Mobilprogramozas_LABOR\\Feleves\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\T460p\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\T460p\\.nuget\\packages\\googlegson\\2.13.0.1\\googlegson.2.13.0.1.nupkg.sha512",

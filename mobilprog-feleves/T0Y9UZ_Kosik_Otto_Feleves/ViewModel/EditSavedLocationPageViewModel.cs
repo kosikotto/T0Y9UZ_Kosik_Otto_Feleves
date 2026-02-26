@@ -14,20 +14,36 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
 {
 
     [QueryProperty(nameof(SavedLocation), "savedLocation")]
-    [QueryProperty(nameof(BackgroundColor), "BackgroundColor")]
+    [QueryProperty(nameof(BackgroundImage), "BackgroundImage")]
     [QueryProperty(nameof(TextColor), "TextColor")]
     [QueryProperty(nameof(MainPageViewModel), "MainPageViewModel")]
 
+    [QueryProperty(nameof(CardColor), "CardColor")]
+    [QueryProperty(nameof(PlaceholderColor), "PlaceholderColor")]
+    [QueryProperty(nameof(NavButtonsColor), "NavButtonsColor")]
+    [QueryProperty(nameof(ButtonsColor), "ButtonsColor")]
     public partial class EditSavedLocationPageViewModel : ObservableObject
     {
         [ObservableProperty]
         private SavedLocation savedLocation;
 
         [ObservableProperty]
-        private Color backgroundColor;
+        private string backgroundImage;
 
         [ObservableProperty]
         private Color textColor;
+
+        [ObservableProperty]
+        private Color cardColor;
+
+        [ObservableProperty]
+        private Color placeholderColor;
+
+        [ObservableProperty]
+        private Color navButtonsColor;
+
+        [ObservableProperty]
+        private Color buttonsColor;
 
         [ObservableProperty]
         private string newSavedLocation;
@@ -41,7 +57,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         }
 
         [RelayCommand]
-        private async void DoTheUpdate()
+        private async Task DoTheUpdateAsync()
         {
             if(NewSavedLocation != null)
             {
@@ -59,7 +75,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         }
 
         [RelayCommand]
-        private async void CancelUpdate()
+        private async Task CancelUpdateAsync()
         {
             await Shell.Current.GoToAsync("//MainPage");
         }

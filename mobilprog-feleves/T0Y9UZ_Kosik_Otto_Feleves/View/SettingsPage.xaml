@@ -1,127 +1,149 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves"
+             xmlns:local="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves.ViewModel"
              x:Class="T0Y9UZ_Kosik_Otto_Feleves.View.SettingsPage"
-             Title="Settings">
+             Title="Settings"
+             x:DataType="local:SettingsPageViewModel"
+             MaximumWidthRequest="600"
+             BackgroundImageSource="{Binding Background}">
     
-    <ScrollView
-        BackgroundColor="{Binding BackgroundColor}">
-        <VerticalStackLayout
-        Padding="50"
-        Spacing="30">
-            <Border
-                x:Name="SettingsContainer"
-                Stroke="Black"
-                StrokeShape="RoundRectangle 20,20,20,20"
-                Padding="10"
-                BackgroundColor="Coral">
-                
+    <ScrollView>
+            <FlexLayout
+                Padding="50"
+                Direction="Column"
+                JustifyContent="SpaceAround">
+                <Border
+                    x:Name="SettingsContainer"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2"
+                    Shadow="0 0 10 #FFFFFF 0.25"
+                    Padding="10"
+                    BackgroundColor="{Binding CardColor}">
+
                 <VerticalStackLayout
-                    Spacing="10">
-                    <FlexLayout
-                        AlignContent="Center"
-                        AlignItems="Center"
-                        HorizontalOptions="Fill"
-                        JustifyContent="SpaceAround"
-                        Wrap="Wrap"
-                        Margin="0,10,0,10">
-                        <Label
-                            Text="Dark/Light theme"
-                            x:Name="LightDarkThemeLable"
-                            FontSize="20"
-                            TextColor="{Binding TextColor}"/>
+                        Spacing="10">
+                        <FlexLayout
+                            AlignContent="Center"
+                            AlignItems="Center"
+                            HorizontalOptions="Fill"
+                            JustifyContent="SpaceAround"
+                            Wrap="Wrap"
+                            Margin="0,10,0,10">
+                            <Label
+                                Text="Dark/Light theme"
+                                x:Name="LightDarkThemeLable"
+                                FontSize="20"
+                                TextColor="{Binding TextColor}"/>
 
-                        <Button 
-                            x:Name="LightDarkThemeButton"
-                            Text="Theme"
-                            Command="{Binding ChangeThemeCommand}"
-                            BackgroundColor="{Binding BackgroundColor}"
-                            TextColor="{Binding TextColor}"
-                            />
-                    </FlexLayout>
+                            <Button 
+                                x:Name="LightDarkThemeButton"
+                                Text="Theme"
+                                Command="{Binding ChangeThemeCommand}"
+                                TextColor="{Binding TextColor}"
+                                FontAttributes="Bold"
+                                Background="{Binding ButtonsColor}"
+                                BorderColor="#001999"
+                                BorderWidth="2"
+                                Shadow="0 0 5 #FFFFFF 0.25"
+                    />
+                        </FlexLayout>
 
-                    <FlexLayout
-                        AlignContent="Center"
-                        AlignItems="Center"
-                        HorizontalOptions="Fill"
-                        JustifyContent="SpaceAround"
-                        Wrap="Wrap"
-                        Margin="0,10,0,10">
-                        <Label
-                            Text="Set default location"
-                            x:Name="DefaultLocationLabel"
-                            FontSize="20"
-                            TextColor="{Binding TextColor}"/>
-                        
+                        <FlexLayout
+                            AlignContent="Center"
+                            AlignItems="Center"
+                            HorizontalOptions="Fill"
+                            JustifyContent="SpaceAround"
+                            Wrap="Wrap"
+                            Margin="0,10,0,10">
+                            <Label
+                                Text="Set default location"
+                                x:Name="DefaultLocationLabel"
+                                FontSize="20"
+                                TextColor="{Binding TextColor}"/>
+
                         <Entry
-                            Placeholder="{Binding DefaultLocationLable}"
-                            x:Name="DefaultLocationEntry"
-                            Text="{Binding DefaultLocationProperty}"
-                            FontSize="20"
-                            WidthRequest="150"/>
+                                Placeholder="{Binding DefaultLocationLable}"
+                                x:Name="DefaultLocationEntry"
+                                Text="{Binding DefaultLocationProperty}"
+                                FontSize="20"
+                                WidthRequest="150"
+                                PlaceholderColor="{Binding PlaceholderColor}"
+                                TextColor="White"/>
 
                         <HorizontalStackLayout
-                            Spacing="10">
-                            <Button
-                                x:Name="SaveDefaultLocationButton"
-                                Text="Save"
-                                Command="{Binding ChangeDefaultLocationCommand}"
-                                BackgroundColor="Green"
-                                TextColor="{Binding TextColor}"
-                                />
+                                Spacing="10">
+                                <Button
+                                    x:Name="SaveDefaultLocationButton"
+                                    Text="Save"
+                                    Command="{Binding ChangeDefaultLocationCommand}"
+                                    TextColor="{Binding TextColor}"
+                                    FontAttributes="Bold"
+                                    Background="{Binding ButtonsColor}"
+                                    BorderColor="#001999"
+                                    BorderWidth="2"
+                                    Shadow="0 0 5 #FFFFFF 0.25"
+                                    />
 
-                            <Button
-                                x:Name="ResetDefaultLocationButton"
-                                Text="Reset"
-                                Command="{Binding ResetDefaultLocationCommand}"
-                                TextColor="{Binding TextColor}"
-                                IsEnabled="{Binding ResetButtonEnabled}"
-                                />
-                        </HorizontalStackLayout>
-                    </FlexLayout>
+                                <Button
+                                    x:Name="ResetDefaultLocationButton"
+                                    Text="Reset"
+                                    Command="{Binding ResetDefaultLocationCommand}"
+                                    TextColor="{Binding TextColor}"
+                                    IsEnabled="{Binding ResetButtonEnabled}"
+                                    FontAttributes="Bold"
+                                    Background="{Binding ResetColor}"
+                                    BorderColor="#001999"
+                                    BorderWidth="2"
+                                    Shadow="0 0 5 #FFFFFF 0.25"
+                                    />
+                            </HorizontalStackLayout>
+                        </FlexLayout>
 
-                    <FlexLayout
-                        HorizontalOptions="Fill"
-                        JustifyContent="SpaceAround"
-                        Wrap="Wrap">
-                        <Label
-                            Text="Version: 1.0"
-                            x:Name="AppVersion"
-                            HorizontalOptions="Center"
-                            HorizontalTextAlignment="Center"
-                            FontSize="20"
-                            TextColor="{Binding TextColor}"/>
-                    </FlexLayout>
+                        <FlexLayout
+                            HorizontalOptions="Fill"
+                            JustifyContent="SpaceAround"
+                            Wrap="Wrap">
+                            <Label
+                                Text="Version: 1.0"
+                                x:Name="AppVersion"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                FontSize="20"
+                                TextColor="{Binding TextColor}"/>
+                        </FlexLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout
+                    Spacing="10">
+
+                    <Button
+                        Text="Home"
+                        x:Name="MainPageButton"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Background="{Binding NavButtonsColor}"
+                        BorderColor="#001999"
+                        BorderWidth="2"
+                        TextColor="White"
+                        Shadow="0 0 5 #FFFFFF 0.25"
+                        Command="{Binding NavigateToMainCommand}"/>
+
+                    <Button
+                        Text="Forecast"
+                        x:Name="ForecastPageButton"
+                        IsEnabled="{Binding IsForecastButtonEnabled}"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Background="{Binding ForecastButtonColor}"
+                        BorderColor="#001999"
+                        BorderWidth="2"
+                        TextColor="White"
+                        Shadow="0 0 5 #FFFFFF 0.25"
+                        Command="{Binding NavigateToForecastCommand}"/>
+                
                 </VerticalStackLayout>
-            </Border>
-            
-            <VerticalStackLayout
-                Spacing="10">
-
-                <Button
-                    Text="Home"
-                    x:Name="MainPageButton"
-                    Clicked="OnMainPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
-
-                <Button
-                    Text="Forecast"
-                    x:Name="ForecastPageButton"
-                    IsEnabled="{Binding IsForecastButtonEnabled}"
-                    Clicked="OnForecastPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
-
-                <Button
-                    Text="Settings"
-                    x:Name="SettingsPageButton"
-                    Clicked="OnSettingsPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
-
-            </VerticalStackLayout>
-        </VerticalStackLayout>
+            </FlexLayout>
     </ScrollView>
 </ContentPage>

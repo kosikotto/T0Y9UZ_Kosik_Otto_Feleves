@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -7,20 +8,40 @@ using System.Threading.Tasks;
 
 namespace T0Y9UZ_Kosik_Otto_Feleves.Model
 {
-    public class WeatherService
+    public class WeatherService : IWeatherService
     {
-        private static readonly string API_KEY = "&appid=3787e126ab00325569b990fcc7bf26c9&units=metric";
-        private static readonly string BASE_API_LOCATION = "https://api.openweathermap.org/data/2.5/forecast?q=";
-        private static readonly string BASE_API_COORDINATES = "https://api.openweathermap.org/data/2.5/forecast?lat=";
-        public static Location location;
-
-        public static async Task<string> FetchData()
+        private readonly string API_KEY = "&appid=3787e126ab00325569b990fcc7bf26c9&units=metric";
+        private readonly string BASE_API_LOCATION = "https://api.openweathermap.org/data/2.5/forecast?q=";
+        private string BASE_API_COORDINATES = "https://api.openweathermap.org/data/2.5/forecast?lat=";
+        public Location location;
+        public async Task<bool> EnsureLocationPermissionAsync()
         {
+            var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
+
+            if (status != PermissionStatus.Granted)
+            {
+                status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+            }
+
+            return status == PermissionStatus.Granted;
+        }
+        public async Task<string> FetchDataAsnyc()
+        {
+            if (!await EnsureLocationPermissionAsync())
+                return null;
+
             try
             {
                 location = await Geolocation.Default.GetLastKnownLocationAsync();
 
-                if(location != null)
+                if (location == null)
+                {
+                    var request = new GeolocationRequest(GeolocationAccuracy.Low);
+
+                    location = await Geolocation.GetLocationAsync(request);
+                }
+
+                if (location != null)
                 {
                     double latitude = location.Latitude;
                     double longitude = location.Longitude;
@@ -29,7 +50,6 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.Model
                     var responseMessage = await client.GetStringAsync($"{BASE_API_COORDINATES}{latitude}&lon={longitude}{API_KEY}");
                     return responseMessage;
                 }
-
                 else
                 {
                     return null;
@@ -40,8 +60,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.Model
                 return null;
             }
         }
-
-        public static async Task<string> FetchData(string location)
+        public async Task<string> FetchDataAsnyc(string location)
         {
             try
             {
@@ -54,40 +73,78 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.Model
                 return null;
             }
         }
-        public static async Task<List<object>> ParseData(string responseMessage)
+        public List<object> ParseData(string responseMessage)
         {
             using JsonDocument doc = JsonDocument.Parse(responseMessage);
             JsonElement root = doc.RootElement;
 
-            List<WeatherForecast> weatherInfos = new List<WeatherForecast>();
-            GeoInfo geoInfo = new GeoInfo(
-                root.GetProperty("city").GetProperty("country").GetString() ?? "", //Country
-                root.GetProperty("city").GetProperty("name").GetString() ?? "", //CityName
-                DateTime.Now //CurrentDate
-                );
+            List<IWeatherForecast> weatherInfos = new List<IWeatherForecast>();
+            HashSet<DateTime> uniqueDays = new HashSet<DateTime>();
 
-            for (int i = 0; i < root.GetProperty("list").GetArrayLength(); i++)
+            IGeoInfo geoInfo = new GeoInfo(
+                root.GetProperty("city").GetProperty("country").GetString() ?? "",
+                root.GetProperty("city").GetProperty("name").GetString() ?? "",
+                DateTime.Now
+            );
+
+            DateTime now = DateTime.Now;
+
+            JsonElement list = root.GetProperty("list");
+            int count = list.GetArrayLength();
+
+            for (int i = 0; i < count; i++)
             {
-                var currentData = root.GetProperty("list")[i];
-                var date = DateTime.Parse(currentData.GetProperty("dt_txt").GetString());
-                if (date.Hour == 12)
+                var currentData = list[i];
+                var dateString = currentData.GetProperty("dt_txt").GetString();
+                var date = DateTime.Parse(dateString);
+                DateTime forecastDay = date.Date;
+
+                if (weatherInfos.Count == 0)
                 {
-                    weatherInfos.Add(new WeatherForecast(
-                        currentData.GetProperty("dt_txt").GetString(), //Date
-                        currentData.GetProperty("main").GetProperty("temp").GetDouble(), //Temperature
-                        currentData.GetProperty("weather")[0].GetProperty("description").GetString() ?? "", //Description
-                        currentData.GetProperty("weather")[0].GetProperty("icon").GetString() ?? "", //Icon
-                        currentData.GetProperty("weather")[0].GetProperty("icon").GetString() ?? "", //WeatherIcon
-                        currentData.GetProperty("main").GetProperty("humidity").GetInt32(), //Humidity
-                        currentData.GetProperty("wind").GetProperty("speed").GetDouble(), //WindSpeed
-                        currentData.GetProperty("main").GetProperty("pressure").GetInt32(), //Pressure
-                        currentData.GetProperty("clouds").GetProperty("all").GetInt32() //Clouds
-                        ));
+                    if (date >= now)
+                    {
+                        weatherInfos.Add(CreateForecast(currentData));
+                        uniqueDays.Add(forecastDay);
+                    }
                 }
+                else
+                {
+                    if (!uniqueDays.Contains(forecastDay))
+                    {
+                        if (date.Hour == 12)
+                        {
+                            weatherInfos.Add(CreateForecast(currentData));
+                            uniqueDays.Add(forecastDay);
+                        }
+                    }
+                }
+
+                if (weatherInfos.Count >= 5)
+                {
+                    break;
+                }
+            }
+
+            if (weatherInfos.Count == 0 && count > 0)
+            {
+                weatherInfos.Add(CreateForecast(list[0]));
             }
 
             return new List<object>() { weatherInfos, geoInfo };
         }
-
+        private WeatherForecast CreateForecast(JsonElement data)
+        {
+            return new WeatherForecast(
+                data.GetProperty("dt_txt").GetString(),
+                data.GetProperty("main").GetProperty("temp").GetDouble(),
+                data.GetProperty("weather")[0].GetProperty("description").GetString() ?? "",
+                data.GetProperty("weather")[0].GetProperty("icon").GetString() ?? "",
+                data.GetProperty("weather")[0].GetProperty("icon").GetString() ?? "",
+                data.GetProperty("main").GetProperty("humidity").GetInt32(),
+                data.GetProperty("wind").GetProperty("speed").GetDouble(),
+                data.GetProperty("main").GetProperty("pressure").GetInt32(),
+                data.GetProperty("clouds").GetProperty("all").GetInt32()
+            );
+        }
     }
 }

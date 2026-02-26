@@ -11,16 +11,21 @@ using System.Threading.Tasks;
 using T0Y9UZ_Kosik_Otto_Feleves.Model;
 namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel 
 { 
-    [QueryProperty(nameof(GeoInfo), "geoInfo")]
-    [QueryProperty(nameof(WeatherForecasts), "weatherForecasts")]
-    [QueryProperty(nameof(BackgroundColor), "BackgroundColor")]
+    [QueryProperty(nameof(BackgroundImage), "BackgroundImage")]
     [QueryProperty(nameof(TextColor), "TextColor")]
     [QueryProperty(nameof(IsDarkTheme), "IsDarkTheme")]
+    [QueryProperty(nameof(CardColor), "CardColor")]
+    [QueryProperty(nameof(PlaceholderColor), "PlaceholderColor")]
+    [QueryProperty(nameof(NavButtonsColor), "NavButtonsColor")]
+    [QueryProperty(nameof(ForecastButtonColor), "ForecastButtonColor")]
+    [QueryProperty(nameof(ButtonsColor), "ButtonsColor")]
+
+
     [QueryProperty(nameof(UpdateSelectedItem), "UpdateSelectedItem")]
-    [QueryProperty(nameof(database), "Database")]
-    [QueryProperty(nameof(Locations), "Locations")]
     public partial class MainPageViewModel : ObservableObject 
-    { 
+    {
+        ISharedDataService sharedDataService;
+        IWeatherService weatherService;
         private readonly NetworkAccess _current = Connectivity.Current.NetworkAccess;
         public ObservableCollection<SavedLocation> Locations { get; set; }
         [ObservableProperty]
@@ -29,14 +34,14 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         [ObservableProperty]
         private SavedLocation updateSelectedItem;
 
-        public ILocationDatabase database;
+        public ILocationDatabase database { get; set; }
 
         [ObservableProperty] 
         private string searchInput; 
         [ObservableProperty] 
-        private GeoInfo geoInfo; 
-        [ObservableProperty] 
-        private List<WeatherForecast> weatherForecasts; 
+        private IGeoInfo geoInfo;
+        [ObservableProperty]
+        private List<IWeatherForecast> weatherForecasts;
         [ObservableProperty] 
         private bool isWeatherVisible; 
         [ObservableProperty] 
@@ -44,22 +49,47 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         [ObservableProperty] 
         private bool isForecastButtonEnabled; 
         [ObservableProperty] 
-        private Color backgroundColor = Colors.DarkSlateBlue; 
+        private string backgroundImage; 
         [ObservableProperty] 
-        private Color textColor = Colors.White; 
+        private Color textColor; 
         [ObservableProperty] 
-        private bool isDarkTheme = true; 
+        private bool isDarkTheme;
+        [ObservableProperty]
+        private Color cardColor;
+        [ObservableProperty]
+        private Color placeholderColor;
+        [ObservableProperty]
+        private Color navButtonsColor;
+        [ObservableProperty]
+        private Color buttonsColor;
+        [ObservableProperty]
+        private Color forecastButtonColor;
 
-        public MainPageViewModel() 
-        { 
+        public MainPageViewModel(IWeatherService weatherService, ILocationDatabase database, ISharedDataService sharedDataService) 
+        {
+            this.weatherService = weatherService;
+            this.database = database;
+            this.sharedDataService = sharedDataService;
+            this.GeoInfo = sharedDataService.CurrentGeoInfo;
+            this.WeatherForecasts = sharedDataService.CurrentWeatherForecasts;
+
+            //Preferences.Clear();
+            BackgroundImage = Preferences.Default.Get("Background", "wallpaper5.jpg");
+            TextColor = Color.FromArgb(Preferences.Default.Get("TextColor", "#FFFFFF"));
+            IsDarkTheme = Preferences.Default.Get("IsDarkTheme", true);
+            CardColor = Color.FromArgb(Preferences.Default.Get("CardColor", "#000059"));
+            PlaceholderColor = Color.FromArgb(Preferences.Default.Get("PlaceholderColor", "#004999"));
+            NavButtonsColor = Color.FromArgb(Preferences.Default.Get("NavButtonsColor", "#005999"));
+            ButtonsColor = Color.FromArgb(Preferences.Default.Get("ButtonsColor", "#000599"));
+            ForecastButtonColor = Color.FromArgb("#000039");
+
             IsWeatherVisible = false; 
             IsDetailsVisible = false; 
             IsForecastButtonEnabled = false;
 
-            this.database = new LocationDatabase();
             Locations = new ObservableCollection<SavedLocation>();
 
-            if(_current == NetworkAccess.Internet)
+            if (_current == NetworkAccess.Internet)
             {
                 _ = InitializeWithCoordinates();
             }
@@ -67,12 +97,12 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
             _ = InitializeAsync();
         }
 
-        public async Task InitializeWithCoordinates()
+        private async Task InitializeWithCoordinates()
         {
-            var responseMessage = await WeatherService.FetchData();
+            var responseMessage = await this.weatherService.FetchDataAsnyc();
             if (responseMessage != null)
             {
-                await GenerateValues(responseMessage);
+                GenerateValues(responseMessage);
             }
             else
             {
@@ -80,25 +110,25 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
             }
         }
 
-        public async Task InitializeWithDefaultLocation()
+        private void InitializeWithDefaultLocation()
         {
             string defaultLocation = Preferences.Default.Get("DefaultLocation", string.Empty);
             if (!string.IsNullOrEmpty(defaultLocation))
             {
                 SearchInput = defaultLocation;
-                _ = DisplayValues();
+                _ = DisplayValuesAsync();
             }
         }
 
         [RelayCommand] 
-        private async Task DisplayValues() 
+        private async Task DisplayValuesAsync() 
         { 
             if(_current == NetworkAccess.Internet)
             {
                 string inputCity = SearchInput;
                 if (!string.IsNullOrEmpty(inputCity))
                 {
-                    var responseMessage = await WeatherService.FetchData(SearchInput);
+                    var responseMessage = await this.weatherService.FetchDataAsnyc(SearchInput);
                     if (responseMessage != null)
                     {
                         SearchInput = "";
@@ -130,7 +160,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         }
 
         [RelayCommand]
-        private async Task AddLocationToFav()
+        private async Task AddLocationToFavAsync()
         {
             if(GeoInfo != null)
             {
@@ -151,7 +181,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         }
 
         [RelayCommand]
-        private async Task DeleteLocationFromFav()
+        private async Task DeleteLocationFromFavAsync()
         {
             if (SelectedItem != null)
             {
@@ -161,27 +191,81 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.ViewModel
         }
 
         [RelayCommand]
-        private async Task UpdateLocationFromFav()
+        private async Task UpdateLocationFromFavAsync()
         {
             if(SelectedItem != null)
             {
                 await Shell.Current.GoToAsync("//EditSavedLocationPage", new ShellNavigationQueryParameters()
                 {
                     { "savedLocation", SelectedItem },
-                    { "BackgroundColor", BackgroundColor },
+                    { "BackgroundImage", BackgroundImage },
                     { "TextColor", TextColor },
+                    { "CardColor", CardColor },
+                    { "PlaceholderColor", PlaceholderColor },
                     { "MainPageViewModel", this }
                 });
             }
         }
 
-        private async Task GenerateValues(string responseMessage) 
+        private void GenerateValues(string responseMessage) 
         { 
-            var tmp = WeatherService.ParseData(responseMessage); 
-            GeoInfo = (await tmp)[1] as GeoInfo; 
-            WeatherForecasts = (await tmp)[0] as List<WeatherForecast>; 
-            IsForecastButtonEnabled = true; 
-            IsWeatherVisible = true; IsDetailsVisible = true; 
-        } 
+            var tmp = this.weatherService.ParseData(responseMessage); 
+            var geoInfoValue = tmp[1] as IGeoInfo;
+            if (geoInfoValue is not null)
+            {
+                GeoInfo = geoInfoValue;
+
+                var weatherForecastsValue = tmp[0] as List<IWeatherForecast>;
+                if (weatherForecastsValue is not null)
+                {
+                    WeatherForecasts = weatherForecastsValue;
+                }
+                else
+                {
+                    WeatherForecasts = new List<IWeatherForecast>();
+                }
+
+                this.sharedDataService.CurrentGeoInfo = GeoInfo;
+                this.sharedDataService.CurrentWeatherForecasts = WeatherForecasts;
+
+                IsForecastButtonEnabled = true;
+                IsWeatherVisible = true;
+                IsDetailsVisible = true;
+                ForecastButtonColor = NavButtonsColor;
+            }
+        }
+
+        [RelayCommand]
+        private async Task NavigateToForecastAsync()
+        {
+            await Shell.Current.GoToAsync($"//ForecastPage", animate: true, new ShellNavigationQueryParameters()
+            {
+                { "BackgroundImage", BackgroundImage },
+                { "TextColor", TextColor },
+                { "IsDarkTheme", IsDarkTheme },
+                { "CardColor", CardColor },
+                { "PlaceholderColor", PlaceholderColor },
+                { "NavButtonsColor", NavButtonsColor },
+                { "ForecastButtonColor", ForecastButtonColor },
+                { "ButtonsColor", ButtonsColor }
+            });
+        }
+
+        [RelayCommand]
+        private async Task NavigateToSettingsAsync()
+        {
+            await Shell.Current.GoToAsync($"//SettingsPage", animate: true, new ShellNavigationQueryParameters()
+            {
+                { "BackgroundImage", BackgroundImage },
+                { "IsForecastButtonEnabled", IsForecastButtonEnabled },
+                { "CardColor", CardColor },
+                { "TextColor", TextColor },
+                { "IsDarkTheme", IsDarkTheme },
+                { "PlaceholderColor", PlaceholderColor },
+                { "NavButtonsColor", NavButtonsColor },
+                { "ForecastButtonColor", ForecastButtonColor },
+                { "ButtonsColor", ButtonsColor },
+            });
+        }
     } 
 }

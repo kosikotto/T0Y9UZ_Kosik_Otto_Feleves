@@ -2,25 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="T0Y9UZ_Kosik_Otto_Feleves.View.EditSavedLocationPage"
-             Title="EditSavedLocationPage">
-    <VerticalStackLayout
-        BackgroundColor="{Binding BackgroundColor}"
-        Padding="50">
-        <Border
-            Stroke="Black"
+             xmlns:local="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves.ViewModel"
+             x:DataType="local:EditSavedLocationPageViewModel"
+             MaximumWidthRequest="600"
+             Title="EditSavedLocationPage"
+             BackgroundImageSource="{Binding BackgroundImage}">
+    <ScrollView>
+        <FlexLayout
+        Padding="50"
+            Direction="Column"
+            JustifyContent="SpaceAround">
+            <Border
             StrokeShape="RoundRectangle 20,20,20,20"
+            StrokeThickness="2"
+            Shadow="0 0 10 #FFFFFF 0.25"
             Padding="10"
-            BackgroundColor="Coral">
+            BackgroundColor="{Binding CardColor}"
+            Margin="0,0,0,20">
 
-            <VerticalStackLayout
+                <VerticalStackLayout
                 Spacing="10">
-                <Label 
+                    <Label 
                     Text="Update Location"
                     HorizontalTextAlignment="Center"
                     FontSize="30"
                     TextColor="{Binding TextColor}"/>
 
-                <Label 
+                    <Label 
                     Text="{Binding SavedLocation.Location, StringFormat='Old location name: {0}'}"
                     VerticalOptions="Center" 
                     HorizontalOptions="Center"
@@ -28,31 +36,40 @@
                     FontAttributes="Bold"
                     TextColor="{Binding TextColor}"/>
 
-                <Entry
+                    <Entry
                     x:Name="NewLocationEntry"
                     Placeholder="New Location name"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
+                    PlaceholderColor="{Binding PlaceholderColor}"
                     Text="{Binding NewSavedLocation}"
-                    WidthRequest="150"
+                    WidthRequest="175"
+                    FontSize="15"
                     TextColor="{Binding TextColor}"/>
 
-                <Button 
+                    <Button 
                     Text="Save"
                     FontSize="20"
                     Command="{Binding DoTheUpdateCommand}"
                     TextColor="{Binding TextColor}"
-                    BackgroundColor="Green"
+                    Background="DarkGreen"
+                    BorderColor="#001999"
+                    BorderWidth="2"
+                    Shadow="0 0 5 #FFFFFF 0.25"
                     FontAttributes="Bold"/>
 
-                <Button 
+                    <Button 
                     Text="Cancel"
                     FontSize="20"
                     Command="{Binding CancelUpdateCommand}"
                     TextColor="{Binding TextColor}"
-                    BackgroundColor="Red"
+                    Background="DarkRed"
+                    BorderColor="#001999"
+                    BorderWidth="2"
+                    Shadow="0 0 5 #FFFFFF 0.25"
                     FontAttributes="Bold"/>
-            </VerticalStackLayout>
-        </Border>
-    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </FlexLayout>
+    </ScrollView>
 </ContentPage>

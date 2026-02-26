@@ -15,7 +15,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = T0Y9UZ_Kosik_Otto_Feleves
-build_property.ProjectDir = D:\Mobilprog_MAUI\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\
+build_property.ProjectDir = C:\Users\T460p\Desktop\Docs\Suli\Egyetemi anyagok\5. szemeszter\Mobilprogramozas_LABOR\Feleves\T0Y9UZ_Kosik_Otto_Feleves\mobilprog-feleves\T0Y9UZ_Kosik_Otto_Feleves\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotExportsEnabled = 
@@ -27,49 +27,49 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/App.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/AppShell.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/Resources/Styles/Colors.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/Resources/Styles/Styles.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/EditSavedLocationPage.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/EditSavedLocationPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.View.EditSavedLocationPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\EditSavedLocationPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\EditSavedLocationPage.xaml
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/ForecastPage.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/ForecastPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.View.ForecastPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\ForecastPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\ForecastPage.xaml
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/MainPage.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.View.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
 
-[D:/Mobilprog_MAUI/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/SettingsPage.xaml]
+[C:/Users/T460p/Desktop/Docs/Suli/Egyetemi anyagok/5. szemeszter/Mobilprogramozas_LABOR/Feleves/T0Y9UZ_Kosik_Otto_Feleves/mobilprog-feleves/T0Y9UZ_Kosik_Otto_Feleves/View/SettingsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = T0Y9UZ_Kosik_Otto_Feleves.View.SettingsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = View\SettingsPage.xaml

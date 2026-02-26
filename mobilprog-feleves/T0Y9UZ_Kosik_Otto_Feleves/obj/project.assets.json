@@ -31504,11 +31504,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj",
+      "projectUniqueName": "C:\\Users\\T460p\\Desktop\\Docs\\Suli\\Egyetemi anyagok\\5. szemeszter\\Mobilprogramozas_LABOR\\Feleves\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj",
       "projectName": "T0Y9UZ_Kosik_Otto_Feleves",
-      "projectPath": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj",
+      "projectPath": "C:\\Users\\T460p\\Desktop\\Docs\\Suli\\Egyetemi anyagok\\5. szemeszter\\Mobilprogramozas_LABOR\\Feleves\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\T0Y9UZ_Kosik_Otto_Feleves.csproj",
       "packagesPath": "C:\\Users\\T460p\\.nuget\\packages\\",
-      "outputPath": "D:\\Mobilprog_MAUI\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\obj\\",
+      "outputPath": "C:\\Users\\T460p\\Desktop\\Docs\\Suli\\Egyetemi anyagok\\5. szemeszter\\Mobilprogramozas_LABOR\\Feleves\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

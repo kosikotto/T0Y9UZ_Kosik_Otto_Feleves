@@ -48,7 +48,7 @@ namespace T0Y9UZ_Kosik_Otto_Feleves.Model
         public async Task Clear()
         {
             await database.DeleteAllAsync<SavedLocation>();
-            await database.CloseAsync(); // mindig zárd le előtte!
+            await database.CloseAsync();
             File.Delete(databasePath);
         }
     }

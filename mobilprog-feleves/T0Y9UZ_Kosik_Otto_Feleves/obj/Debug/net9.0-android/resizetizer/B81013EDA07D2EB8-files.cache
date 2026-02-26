@@ -1,11 +1,16 @@
 ﻿obj\Debug\net9.0-android\resizetizer\r\drawable\cloudness.png
 obj\Debug\net9.0-android\resizetizer\r\drawable\humidity.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\minusz.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\plusz.png
 obj\Debug\net9.0-android\resizetizer\r\drawable\pressure.png
+obj\Debug\net9.0-android\resizetizer\r\drawable\pressuregauge.png
 obj\Debug\net9.0-android\resizetizer\r\drawable\sun.png
 obj\Debug\net9.0-android\resizetizer\r\drawable\wallpaper1.jpg
 obj\Debug\net9.0-android\resizetizer\r\drawable\wallpaper2.jpg
 obj\Debug\net9.0-android\resizetizer\r\drawable\wallpaper3.jpg
 obj\Debug\net9.0-android\resizetizer\r\drawable\wallpaper4.jpg
+obj\Debug\net9.0-android\resizetizer\r\drawable\wallpaper5.jpg
+obj\Debug\net9.0-android\resizetizer\r\drawable\wallpaper6.jpg
 obj\Debug\net9.0-android\resizetizer\r\drawable\wind.png
 obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml

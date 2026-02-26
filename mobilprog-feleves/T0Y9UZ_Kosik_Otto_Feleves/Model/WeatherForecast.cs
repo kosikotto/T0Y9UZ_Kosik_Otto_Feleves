@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace T0Y9UZ_Kosik_Otto_Feleves.Model
 {
-    public class WeatherForecast
+    public class WeatherForecast : IWeatherForecast
     {
         public string Date { get; private set; }
         public double Temperature { get; private set; }

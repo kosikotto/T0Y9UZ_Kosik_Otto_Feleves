@@ -2,67 +2,150 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="T0Y9UZ_Kosik_Otto_Feleves.View.ForecastPage"
-             Title="Forecast">
+             Title="Forecast"
+             xmlns:local="clr-namespace:T0Y9UZ_Kosik_Otto_Feleves.ViewModel"
+             x:DataType="local:ForecastPageViewModel"
+             MaximumWidthRequest="600"
+             BackgroundImageSource="{Binding BackgroundImage}">
     <ScrollView>
-        <VerticalStackLayout
-            BackgroundColor="{Binding BackgroundColor}"
-            Padding="50"
-            Spacing="30">   
-            <Border
-                x:Name="ForecastForFiveDaysContainer"
-                IsVisible="False"
-                Stroke="Black"
-                StrokeShape="RoundRectangle 20,20,20,20"
-                BackgroundColor="Coral">
-                <VerticalStackLayout>
-                    <Label 
-                        Text="5 day weather forecast" 
-                        FontSize="30" 
-                        HorizontalTextAlignment="Center"
-                        TextColor="{Binding TextColor}"
-                        FontAttributes="Bold"
-                        Margin="0,20,0,20">
-                    </Label>
+            <FlexLayout
+                Padding="50"
+                Direction="Column"
+                JustifyContent="SpaceAround"
+                >   
+                <Border
+                    x:Name="ForecastForFiveDaysContainer"
+                    IsVisible="true"
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    StrokeThickness="2"
+                    Shadow="0 0 10 #FFFFFF 0.25"
+                    Padding="10"
+                    BackgroundColor="{Binding CardColor}"
+                    Margin="0,0,0,20">
+                    <VerticalStackLayout>
+                        <Label 
+                            Text="5 day weather forecast" 
+                            FontSize="30" 
+                            HorizontalTextAlignment="Center"
+                            TextColor="{Binding TextColor}"
+                            FontAttributes="Bold"
+                            Margin="0,20,0,20">
+                        </Label>
 
-                    <FlexLayout 
-                        x:Name="ForecastForFiveDays" 
-                        HorizontalOptions="Center" 
-                        AlignItems="Start"
-                        AlignContent="Start"
-                        Direction="Row"
-                        Wrap="Wrap" 
-                        JustifyContent="SpaceEvenly"
-                        Margin="0,0,0,20">
-                        
-                    </FlexLayout>
-                </VerticalStackLayout>
-            </Border>
+                        <VerticalStackLayout 
+                            x:Name="ForecastForFiveDays" 
+                            HorizontalOptions="Center" 
+                            Margin="0,0,0,20">
 
-            <VerticalStackLayout
+                        <VerticalStackLayout 
+                            BindableLayout.ItemsSource="{Binding ForecastItemsCollection}"
+                            Spacing="10"
+                            Shadow="0 0 10 #FFFFFF 0.25">
+
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="local:ForecastPageItemsViewModel">
+
+                                    <Border
+                                        Stroke="{Binding BorderColor}"
+                                        BackgroundColor="{Binding CardColor}"
+                                        Shadow="0 0 10 #FFFFFF 0.25"
+                                        StrokeThickness="2"
+                                        StrokeShape="RoundRectangle 10"
+                                        MinimumWidthRequest="200"
+                                        Margin="5">
+
+                                        <VerticalStackLayout
+                                            Margin="10"
+                                            Spacing="5"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center">
+
+                                            <Label
+                                                Text="{Binding Date}"
+                                                HorizontalOptions="Center"
+                                                FontSize="20"
+                                                FontAttributes="Bold"
+                                                TextColor="{Binding Source={RelativeSource AncestorType={x:Type local:ForecastPageViewModel}}, Path=TextColor}"/>
+
+                                            <Image
+                                                Source="{Binding WeatherForecastData.Icon, StringFormat='https://openweathermap.org/img/wn/{0}.png'}"
+                                                WidthRequest="75"
+                                                HeightRequest="75" />
+
+                                            <Label
+                                                Text="{Binding WeatherForecastData.Temperature, StringFormat='{0}°C'}"
+                                                HorizontalOptions="Center"
+                                                FontSize="25"
+                                                TextColor="{Binding Source={RelativeSource AncestorType={x:Type local:ForecastPageViewModel}}, Path=TextColor}"/>
+
+                                            <Label
+                                                Text="{Binding WeatherForecastData.Description}"
+                                                HorizontalOptions="Center"
+                                                FontSize="18"
+                                                IsVisible="{Binding DetailsVisible}"
+                                                TextColor="{Binding Source={RelativeSource AncestorType={x:Type local:ForecastPageViewModel}}, Path=TextColor}"/>
+
+                                            <Label
+                                                Text="{Binding WeatherForecastData.Humidity, StringFormat='Humidity: {0}%'}"
+                                                HorizontalOptions="Center"
+                                                FontSize="20"
+                                                IsVisible="{Binding DetailsVisible}"
+                                                TextColor="{Binding Source={RelativeSource AncestorType={x:Type local:ForecastPageViewModel}}, Path=TextColor}"/>
+
+                                            <Label
+                                                Text="{Binding WeatherForecastData.WindSpeed, StringFormat='Wind: {0} m/s'}"
+                                                HorizontalOptions="Center"
+                                                FontSize="20"
+                                                IsVisible="{Binding DetailsVisible}"
+                                                TextColor="{Binding Source={RelativeSource AncestorType={x:Type local:ForecastPageViewModel}}, Path=TextColor}"/>
+
+                                            <ImageButton
+                                                HorizontalOptions="Center"
+                                                WidthRequest="30"
+                                                HeightRequest="30"
+                                                Source="{Binding PlusMinusPicture}"
+                                                Command="{Binding ToggleDetailsCommand}" />
+
+                                        </VerticalStackLayout>
+                                    </Border>
+
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout
                 Spacing="10">
 
-                <Button
-                    Text="Home"
-                    x:Name="MainPageButton"
-                    Clicked="OnMainPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
+                    <Button
+                        Text="Home"
+                        x:Name="MainPageButton"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Background="{Binding NavButtonsColor}"
+                        BorderColor="#001999"
+                        BorderWidth="2"
+                        TextColor="White"
+                        Shadow="0 0 5 #FFFFFF 0.25"
+                        Command="{Binding NavigateToMainCommand}"
+                        />
 
-                <Button
-                    Text="Forecast"
-                    x:Name="ForecastPageButton"
-                    Clicked="OnForecastPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
+                      <Button
+                        Text="Settings"
+                        x:Name="SettingsPageButton"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Background="{Binding NavButtonsColor}"
+                        BorderColor="#001999"
+                        BorderWidth="2"
+                        TextColor="White"
+                        Shadow="0 0 5 #FFFFFF 0.25"
+                        Command="{Binding NavigateToSettingsCommand}"/>
 
-                <Button
-                    Text="Settings"
-                    x:Name="SettingsPageButton"
-                    Clicked="OnSettingsPageClick"
-                    FontSize="20"
-                    FontAttributes="Bold"/>
-
-            </VerticalStackLayout>
-        </VerticalStackLayout>
+                </VerticalStackLayout>
+            </FlexLayout>
     </ScrollView>
 </ContentPage>
