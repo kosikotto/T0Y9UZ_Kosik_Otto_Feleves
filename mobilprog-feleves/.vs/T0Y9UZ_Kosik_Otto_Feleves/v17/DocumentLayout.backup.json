@@ -52,9 +52,10 @@
               "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\Model\\WeatherForecast.cs",
               "ToolTip": "C:\\Users\\T460p\\Desktop\\Docs\\Suli\\Egyetemi anyagok\\5. szemeszter\\Mobilprogramozas_LABOR\\Feleves\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\Model\\WeatherForecast.cs",
               "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\Model\\WeatherForecast.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAA7wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T15:38:49.397Z"
+              "WhenOpened": "2025-12-08T15:38:49.397Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -66,7 +67,8 @@
               "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\SettingsPageViewModel.cs",
               "ViewState": "AgIAAKgAAAAAAAAAAADwv7QAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T15:12:27.406Z"
+              "WhenOpened": "2025-12-08T15:12:27.406Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -76,9 +78,10 @@
               "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\View\\SettingsPage.xaml",
               "ToolTip": "C:\\Users\\T460p\\Desktop\\Docs\\Suli\\Egyetemi anyagok\\5. szemeszter\\Mobilprogramozas_LABOR\\Feleves\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\View\\SettingsPage.xaml",
               "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\View\\SettingsPage.xaml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-08T15:12:20.412Z"
+              "WhenOpened": "2025-12-08T15:12:20.412Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -88,7 +91,7 @@
               "RelativeDocumentMoniker": "T0Y9UZ_Kosik_Otto_Feleves\\Model\\WeatherService.cs",
               "ToolTip": "C:\\Users\\T460p\\Desktop\\Docs\\Suli\\Egyetemi anyagok\\5. szemeszter\\Mobilprogramozas_LABOR\\Feleves\\T0Y9UZ_Kosik_Otto_Feleves\\mobilprog-feleves\\T0Y9UZ_Kosik_Otto_Feleves\\Model\\WeatherService.cs",
               "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\Model\\WeatherService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAAGUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-08T15:12:01.132Z",
               "EditorCaption": ""
@@ -103,7 +106,8 @@
               "RelativeToolTip": "T0Y9UZ_Kosik_Otto_Feleves\\ViewModel\\MainPageViewModel.cs",
               "ViewState": "AgIAAJYAAAAAAAAAAAAcwKEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T13:57:20.592Z"
+              "WhenOpened": "2025-12-08T13:57:20.592Z",
+              "EditorCaption": ""
             }
           ]
         },
