@@ -1,34 +1,35 @@
-🌤️ Cross-Platform Weather App (.NET MAUI)
+# 🌤️ Cross-Platform Weather App (.NET MAUI)
 
-Egy modern, mobilra optimalizált időjárás-előrejelző alkalmazás, amely a .NET MAUI keretrendszer erejét kihasználva nyújt natív élményt. A fejlesztés során az MVVM (Model-View-ViewModel) tervezési mintát követtem, biztosítva a kód tiszta szétválasztását és tesztelhetőségét.
+A modern, mobile-optimized weather forecasting application that leverages the power of the .NET MAUI framework to provide a native experience. During development, I followed the MVVM (Model-View-ViewModel) design pattern, ensuring a clean separation of code and high testability.
 
-***
+---
 
-🌟 Főbb funkciók
+## 🌟 Key Features
 
-1. Valós idejű és 5 napos előrejelzés: Pontos adatok a jelenlegi időjárásról és részletes prognózis a következő napokra az OpenWeather adatbázisából.
-2. Intelligens helymeghatározás: * Engedélyezett GPS esetén az alkalmazás automatikusan felismeri a tartózkodási helyet.
-3. GPS hiányában az elmentett alapértelmezett helyet tölti be.
-4. Manuális keresési lehetőség új városok felfedezéséhez.
-5. Kedvencek kezelése: Felhasználóbarát felület a gyakran keresett helyszínek mentéséhez és gyors eléréséhez.
-6. Offline támogatás & Cache: Belső adatbázis (SQLite) segítségével az alkalmazás eltárolja az utolsó lekérdezett adatokat, így internetkapcsolat nélkül is elérhetőek a korábbi információk.
-7. Hálózati tudatosság: Beépített ellenőrző mechanizmus, amely figyeli az internetkapcsolat állapotát.
-8. Személyre szabhatóság: Beépített sötét és világos mód (Theme Switcher) a kényelmes használat érdekében.
+*   **Real-time and 5-day forecast:** Accurate current weather data and detailed forecasts for the upcoming days from the OpenWeather database.
+*   **Intelligent location detection:** 
+    *   If GPS is enabled, the app automatically detects your current location.
+    *   Without GPS, it loads the saved default location.
+*   **Manual search:** Ability to discover and search for new cities.
+*   **Favorites management:** A user-friendly interface for saving and quickly accessing frequently searched locations.
+*   **Offline support & Cache:** Using an internal database (SQLite), the application stores the most recently fetched data, making previous information available even without an internet connection.
+*   **Network awareness:** Built-in checking mechanism that monitors the internet connection status.
+*   **Customization:** Built-in Dark and Light mode (Theme Switcher) for a comfortable user experience.
 
-***
+---
 
-🏗️ Technikai részletek
+## 🏗️ Technical Details
 
-1. Architektúra: MVVM (tisztán szétválasztott UI és üzleti logika).
-2. Adattárolás: Helyi adatbázis az adatok cache-elésére (SQLite / Preferences).
-3. API integráció: Külső időjárási szolgáltatás (OpenWeatherAPI) REST API-n keresztül.
-4. Hardver elérés: Geolocation szolgáltatások a pontos pozicionáláshoz.
+*   **Architecture:** MVVM (cleanly separated UI and business logic).
+*   **Data Storage:** Local database for data caching (SQLite / Preferences).
+*   **API Integration:** External weather service (OpenWeatherAPI) via REST API.
+*   **Hardware Access:** Geolocation services for accurate positioning.
 
-***
+---
 
-🛠️ Használat és Telepítés
+## 🛠️ Usage and Installation
 
-1. Klónozd a repository-t.
-2. Nyisd meg a solution-t Visual Studio 2022-ben (MAUI workload szükséges).
-3. Válaszd ki a célplatformot (Android emulátor vagy fizikai eszköz).
-4. Indítsd el a futtatást (F5).
+1. Clone the repository.
+2. Open the solution in Visual Studio 2022 (.NET MAUI workload required).
+3. Select the target platform (Android emulator or physical device).
+4. Run the application (press `F5`).
